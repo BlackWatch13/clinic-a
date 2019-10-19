@@ -14,6 +14,7 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <style>
         .map-container {
             overflow: hidden;
@@ -65,7 +66,7 @@
     <!--Main Navigation-->
 
     <!--Main layout-->
-    <div class="container-fluid " style="padding: 91px 0px 0px 280px; margin-left:9%;">
+    <div class="container-fluid contenedor" >
         <div class="d-flex p-3 col-example " style="width:80%; float:left;">
             <div class="card" style="width:400px; ">
                 <div class="card-header">Fecha: 32-08-19 11:30</div>

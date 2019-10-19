@@ -14,6 +14,7 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <style>
 
     .map-container{
@@ -65,7 +66,7 @@ position:absolute;
 
   <!--Main layout-->
  
-<div class="container-fluid text-center" style="padding: 95px 0px 0px 270px; margin-left:9%;">
+<div class="container-fluid text-center contenedor">
 
 
 
