@@ -4,6 +4,11 @@
     padding: 91px 0px 0px 280px;
     margin-left: 0%;
     padding-left: 38%;
+    
+    
+    zoom: 0.75; 
+    -moz-transform: scale(0.8,0.8); 
+    /*-moz-transform-origin: 0 0;*/
 }
 
 .Afooter {
@@ -12,3 +17,7 @@
   bottom: 0;
   width: 100%;
 }
+
+div { 
+    
+} 
