@@ -45,7 +45,7 @@
 
                 <!-- Brand -->
                 <a class="navbar-brand waves-effect" style="margin-left: 50%;" target="_blank">
-                    <H1 class="pink-text">Gestion de doctores</H1>
+                    <H1 class="pink-text">Gestion de Usuarios</H1>
                 </a>
 
                 <!-- Collapse -->
@@ -73,10 +73,11 @@
             <!--Table head-->
             <thead>
                 <tr>
-                    <th>CODIGO</th>
+                    <th>username</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th>Especialidad</th>
+                    <th>Password</th>
+                    <th>estado</th>
 
                 </tr>
                
@@ -86,10 +87,11 @@
             <!--Table body-->
             <tbody>
                  <tr>
-                    <td>CODIGO</td>
-                    <td>Nombre</td>
-                    <td>Apellido</td>
-                    <td>Especialidad</td>
+                    <td>dnns17</td>
+                    <td>Dennis</td>
+                    <td>Anaya</td>
+                    <td>abc123</td>
+                    <td>admin</td>
 
                 </tr>
             </tbody>

@@ -1,9 +1,15 @@
 <?php
 
+    session_start();
+    $_SESSION = array();
+    session_destroy();
+
+    session_start();
+
 //AQUI CONECTAMOS A LA BASE DE DATOS DE POSTGRES
 $conex = "host=localhost port=5432 dbname=clinica user=postgres password=1234";
 $cnx = pg_connect($conex) or die ("<h1>Error de conexion.</h1> ". pg_last_error());
-session_start();
+
 
 function quitar($mensaje)
 {
@@ -22,12 +28,19 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
    $_SESSION["k_username"] = $row['iduser'];
    if($row["estado"]== 1){
        //mandalo a la pantallas de admon
-    echo 'Has sido logueado correctamente '.$_SESSION['k_username'].' <p>';
-    echo '<a href="index.php">Index</a></p>';
+            header('location:../front/Cdoctores.php');
+
+            $_SESSION['log_in'] = true;
+            $_SESSION['rol'] = "admin";
 
    }
     else{
         //mandalo a las pantallas de usuario
+            header('location:../front/index.php');
+
+            $_SESSION['log_in'] = true;
+            $_SESSION['rol'] = "regular";
+
     }
   }else{
    echo 'Password incorrecto';

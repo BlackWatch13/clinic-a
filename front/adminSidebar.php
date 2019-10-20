@@ -23,14 +23,17 @@
             <a href="doctores.php" class="list-group-item list-group-item-action waves-effect">
             <i class="fas fa-user-md mr-3"></i>Doctores</a>
             
-            <a href="doctores.php" class="list-group-item list-group-item-action waves-effect">
+            <a href="Cdoctores.php" class="list-group-item list-group-item-action waves-effect">
             <i class="fas fa-user-md mr-3"></i>Gestion de doctores</a>
             
-            <a href="doctores.php" class="list-group-item list-group-item-action waves-effect">
+            <a href="Cpacientes.php" class="list-group-item list-group-item-action waves-effect">
             <i class="fas fa-user-md mr-3"></i>Gestion de Pacientes</a>
           
-            <a href="doctores.php" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-user-md mr-3"></i>Gestion de consultas</a>
+            <!--a href="Cconsultas.php" class="list-group-item list-group-item-action waves-effect">
+            <i class="fas fa-user-md mr-3"></i>Gestion de consultas</a-->
+            
+            <a href="Cusuarios.php" class="list-group-item list-group-item-action waves-effect">
+            <i class="fas fa-user-md mr-3"></i>Gestion de usuarios</a>
             <!-- Material input -->
 
         </div>

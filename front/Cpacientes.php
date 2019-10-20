@@ -45,7 +45,7 @@
 
                 <!-- Brand -->
                 <a class="navbar-brand waves-effect" style="margin-left: 50%;" target="_blank">
-                    <H1 class="pink-text">Gestion de doctores</H1>
+                    <H1 class="pink-text">Gestion de pacientes</H1>
                 </a>
 
                 <!-- Collapse -->
@@ -76,7 +76,12 @@
                     <th>CODIGO</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th>Especialidad</th>
+                    <th>telefono</th>
+                    <th>Edad</th>
+                    <th>Direccion</th>
+                    <th>Enfermedad</th>
+                    <th>Alergias</th>
+                    <th>Sexo</th>
 
                 </tr>
                
@@ -86,10 +91,15 @@
             <!--Table body-->
             <tbody>
                  <tr>
-                    <td>CODIGO</td>
-                    <td>Nombre</td>
-                    <td>Apellido</td>
-                    <td>Especialidad</td>
+                    <td>PCT</td>
+                    <td>Alexander</td>
+                    <td>Santamaria</td>
+                    <td>4588721215</td>
+                    <td>25</td>
+                    <td>san salvador</td>
+                    <td>ninguna</td>
+                    <td>ninguna</td>
+                    <td></td>
 
                 </tr>
             </tbody>
