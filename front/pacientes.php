@@ -74,7 +74,7 @@ position:absolute;
       <th>Direccion</th>
       <th>Padecimiento</th>
       <th>Alergias</th>
-      
+
     </tr>
   </thead>
   <!--Table head-->
@@ -99,7 +99,7 @@ position:absolute;
       <td>Quezaltepeque, La libertad</td>
       <td>Problemas respiratorios</td>
       <td>Mani, maiz, chocolate</td>
-      
+
     </tr>
     <tr>
       <th scope="row">3</th>
@@ -110,7 +110,7 @@ position:absolute;
       <td>Quezaltepec, La libertad</td>
       <td>Acaros en la piel</td>
       <td>A ciertos medicamentos contra las alergias</td>
-      
+
     </tr>
   </tbody>
   <!--Table body-->
@@ -119,7 +119,7 @@ position:absolute;
 
     </div>
 
-      
+
 
 <!--Footer-->
 <?php
