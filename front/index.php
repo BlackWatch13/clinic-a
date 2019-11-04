@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
+    <title>M</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -16,122 +15,69 @@
     <!-- Your custom styles (optional) -->
     <link href="css/style.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <style>
-        .map-container {
-            overflow: hidden;
-            padding-bottom: 56.25%;
-            position: relative;
-            height: 0;
-        }
-
-        .map-container iframe {
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-        }
-
-    </style>
+    <link href="style.css" rel="stylesheet">
 </head>
 
-<body class="">
+<body>
 
-    <!--Main Navigation-->
-    <header>
-
-        <!-- Navbar -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-            <div class="container-fluid text-center">
-
-                <!-- Brand -->
-                <a class="navbar-brand waves-effect" style="margin-left: 50%;" target="_blank">
-                    <H1 class="pink-text">Citas Próximas</H1>
-                </a>
-
-                <!-- Collapse -->
-
-            </div>
-
-            
-        </nav>
-        <!-- Navbar -->
-
-        <!-- Sidebar -->
-        <?php
-   include 'sidebar.php';
+    <div class="wrapper">
+        
+        <div class="navbar">
+        <!-- AQUI VA EL Sidebar  -->
+       <?php
+   include 'Sidebar.php';
     ?>
-        <!-- Sidebar -->
+      </div>
+        <!-- Page Content  -->
+        <div id="content" style="border-bottom-width: 28px;border-bottom-style: solid;">
 
-    </header>
-    <!--Main Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <div class="container-fluid">
 
-    <!--Main layout-->
-    <div class="container-fluid contenedor" >
-        <div class="d-flex p-3 col-example " style="width:80%; float:left;">
-            <div class="card" style="width:400px; ">
-                <div class="card-header">Fecha: 32-08-19 11:30</div>
-                <div class="card-body">Dennis Anaya <br>DUI:03051366-6</div>
-                <div class="card-footer">Dr. Miguel Orellana - Quiropráctico</div>
-            </div>
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
 
-            <div class="card" style="width:400px">
-                <div class="card-header">Fecha: 3-09-19 02:58</div>
-                <div class="card-body">Alexander Santamaria<br>DUI: 12345678-9</div>
-                <div class="card-footer">Dra. Carolina Angulo - Psicologa</div>
-            </div>
+                    </button>
+                    
+                </div>
+            </nav>
+<div class="container-fluid" style="margin-top:80px">
 
-            <div class="card" style="width:400px">
-                <div class="card-header">Fecha: 4-09-19 11:30</div>
-                <div class="card-body">Oscar Romero <br>DUI:11223344-0</div>
-                <div class="card-footer">Dr. Ricardo Archilla - Gastroenterólogo </div>
-            </div>
+
+
+     <!-- INSERTAR CONTENIDOS -->
+
+
+
+</div>
         </div>
-
-        <div class="d-flex p-3 col-example" style="width:80%; float:left;">
-            <div class="card" style="width:400px; ">
-                <div class="card-header">Fecha: </div>
-                <div class="card-body">Paciente: <br>DUI:</div>
-                <div class="card-footer">Dr(a). - Especialidad</div>
-            </div>
-
-            <div class="card" style="width:400px; ">
-                <div class="card-header">Fecha: </div>
-                <div class="card-body">Paciente: <br>DUI:</div>
-                <div class="card-footer">Dr(a). - Especialidad</div>
-            </div>
-
-            <div class="card" style="width:400px; ">
-                <div class="card-header">Fecha: </div>
-                <div class="card-body">Paciente: <br>DUI:</div>
-                <div class="card-footer">Dr(a). - Especialidad</div>
-            </div>
-        </div>
-
-
     </div>
-    <!--Footer-->
+    <!-- AQUI VA EL FOOTER -->
     <?php
     include 'footer.php';
     ?>
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Initializations -->
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
     <script type="text/javascript">
-        // Animations initialization
-        new WOW().init();
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
 
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
     </script>
-
-    <!-- Charts -->
-
 </body>
 
 </html>
