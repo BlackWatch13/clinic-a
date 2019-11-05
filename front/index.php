@@ -21,11 +21,11 @@
 <body>
 
     <div class="wrapper">
-        
+
         <div class="navbar">
         <!-- AQUI VA EL Sidebar  -->
        <?php
-   include 'Sidebar.php';
+   include 'sidebar.php';
     ?>
       </div>
         <!-- Page Content  -->
@@ -38,7 +38,7 @@
                         <i class="fas fa-align-left"></i>
 
                     </button>
-                    
+
                 </div>
             </nav>
 <div class="container-fluid" style="margin-top:80px">
