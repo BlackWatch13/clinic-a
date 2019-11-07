@@ -1,7 +1,7 @@
 import proximact from '../model/proximact';
 
 export async function getproximact(req, res){
-    const proxi = await proximact.findAll({attributes:['idproximact','idconsulta','fecha']});
+    const proxi = await proximact.findAll({attributes:['idproximact','fecha','hora','idpaciente','doctor','especialidad']});
     res.json({
         data: proxi
     });
@@ -9,7 +9,7 @@ export async function getproximact(req, res){
 
 export async function getproxwhere(req, res){
     const {idproximact}= req.params;
-    const prox = await proximact.findOne({where:{idproximact},attributes:['idproximact','idconsulta','fecha']})
+    const prox = await proximact.findAll({where:{idproximact:idproximact}})
     res.json(
         {
             message: 'Valores solicitados',
@@ -25,14 +25,15 @@ export async function deleteprox(req, res){
         message:'delete successful',
         count: delprox
     })
+    
 };
 
 export async function crearprox(req, res){
-    const {idproximact, idconsulta, fecha} = req.body;
+    const {idproximact, fecha, hora, idpaciente,doctor,especialidad} = req.body;
     try{
-        let prox = await proximact.create({idproximact, idconsulta, fecha},
+        let prox = await proximact.create({idproximact, fecha, hora, idpaciente,doctor,especialidad},
         {
-          fields:['idproximact','idconsulta','fecha']
+          fields:['idproximact','fecha','hora','idpaciente','doctor','especialidad']
         });
         if (prox) {
             return res.json({
@@ -49,8 +50,8 @@ export async function crearprox(req, res){
 
 export async function updateprox(req, res){
     const {idproximact} = req.params;
-    const {fecha} = req.body;
-    const prox3 = await proximact.findAll({attributes:['idproximact','idconsulta','fecha'],
+    const {fecha, hora, idpaciente,doctor,especialidad} = req.body;
+    const prox3 = await proximact.findAll({attributes:['fecha','hora','idpaciente','doctor','especialidad'],
         where:{
              idproximact
         }
@@ -58,7 +59,11 @@ export async function updateprox(req, res){
     if(prox3.length > 0){
         prox3.forEach(async prox3 =>{
             await prox3.update({
-                fecha
+                fecha,
+                hora,
+                idpaciente,
+                doctor,
+                especialidad
             });
         })
     }

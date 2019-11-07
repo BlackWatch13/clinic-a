@@ -6,14 +6,24 @@ const proximact = sequelize.define('proximact',{
        type: Sequelize.TEXT,
        primaryKey: true
    },
-   idconsulta:{
+   fecha:{
        type: Sequelize.TEXT
    },
-   fecha:{
+   hora:{
+       type: Sequelize.TEXT
+   },
+   idpaciente:{
+       type: Sequelize.TEXT
+   },
+   doctor:{
+       type: Sequelize.TEXT
+   },
+   especialidad:{
        type: Sequelize.TEXT
    }
 
-},{tableName: 'proximact',
+
+},{tableName: 'proxcita',
 timestamps: false})
 
 export default proximact;

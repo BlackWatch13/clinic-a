@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 import {sequelize} from '../db/db';
-import consulta_hojaclinica from './consulta_hojaclinica';
+
 
 const paciente = sequelize.define('paciente',{
     idpaciente:{
@@ -10,7 +10,7 @@ const paciente = sequelize.define('paciente',{
     nombre:{
         type: Sequelize.TEXT
     },
-    apellidos:{
+    apellido:{
         type: Sequelize.TEXT
     },
     telefono:{
@@ -22,24 +22,16 @@ const paciente = sequelize.define('paciente',{
     direccion:{
         type: Sequelize.TEXT
     },
-    enferpade:{
-        type: Sequelize.TEXT
-    },
-    alergias:{
-        type: Sequelize.TEXT
-    },
     sexo:{
         type: Sequelize.TEXT
     }
 
 
 },{
-    tableName: 'paciente',
+    tableName: 'pacientes',
     timestamps: false
 }
 )
-//agregar relacion antes de exportar
-//paciente.hasMany(consulta_hojaclinica,{foreingKey: 'idpaciente', sourceKey: 'idconsulta' });
-//consulta_hojaclinica.belongTo(paciente,{foreingKey: 'idpaciente', sourceKey:'idconsulta'});
+
 
 export default paciente;

@@ -1,27 +1,25 @@
 import paciente from '../model/paciente';
 
 export async function getpaciente(req, res){
-    const getpaciente = await paciente.findAll({attributes:['idpaciente','nombre','apellidos','telefono','edad','direccion','enferpade','alergias','sexo']});
+    const getpaciente = await paciente.findAll({attributes:['idpaciente','nombre','apellido','telefono','edad','direccion','sexo']});
     res.json({
         data: getpaciente
     });
 };
 
 export async function crearpaciente(req, res){
-    const {idpaciente, nombre, apellidos, telefono, edad, direccion, enferpade, alergias,sexo}= req.body;
+    const {idpaciente, nombre, apellido, telefono, edad, direccion,sexo}= req.body;
     try {
         let newpaciente = await paciente.create(
             {idpaciente,
                  nombre,
-                  apellidos,
+                  apellido,
                    telefono,
                     edad,
                      direccion,
-                      enferpade,
-                       alergias,
                         sexo},
             {
-                fields:['idpaciente', 'nombre', 'apellidos', 'telefono', 'edad', 'direccion', 'enferpade', 'alergias','sexo']
+                fields:['idpaciente', 'nombre', 'apellido', 'telefono', 'edad', 'direccion', 'sexo']
             });
             if (newpaciente){
                 return res.json({mesage: "Insert successful", data : newpaciente});
@@ -38,9 +36,8 @@ export async function crearpaciente(req, res){
 
 export async function getpacientewhere(req, res){
     const {idpaciente} = req.params;
-  const paciente1 = await paciente.findOne({
-      where : {idpaciente}, 
-      attributes:['idpaciente','nombre','apellidos','telefono','edad','direccion','enferpade','alergias','sexo']
+  const paciente1 = await paciente.findAll({
+      where : {idpaciente: idpaciente}
   });
 res.json({data: paciente1})
 };
@@ -60,8 +57,8 @@ export async function deletepacientewhere(req, res){
 
 export async function updatepacientewhere(req, res){
     const {idpaciente} = req.params;
-    const {nombre, apellidos, telefono, edad, direccion, enferpade, alergias,sexo} = req.body;
-    const paciente3 = await paciente.findAll({attributes:['idpaciente','nombre','apellidos','telefono','edad','direccion','enferpade','alergias','sexo'],
+    const {nombre, apellido, telefono, edad, direccion, enferpade, alergias,sexo} = req.body;
+    const paciente3 = await paciente.findAll({attributes:['idpaciente','nombre','apellido','telefono','edad','direccion','sexo'],
         where:{
              idpaciente
         }
@@ -70,12 +67,10 @@ export async function updatepacientewhere(req, res){
         paciente3.forEach(async paciente3 =>{
             await paciente3.update({
                 nombre,
-                apellidos,
+                apellido,
                 telefono,
                 edad,
                 direccion,
-                enferpade,
-                alergias,
                 sexo
             });
         })

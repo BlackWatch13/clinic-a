@@ -1,8 +1,14 @@
 import app from './app';
 
+
+
+
 async function main (){
-    await app.listen(3000);
-    console.log('Server on port 3000');
+    const server = require('http').createServer(app);
+    const io = require('socket.io')(server);
+    io.on('connection',()=>{});
+    server.listen(3000);
+    console.log('Server en puerto 3000');
 };
 
 main();

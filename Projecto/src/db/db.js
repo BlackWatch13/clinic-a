@@ -2,8 +2,8 @@ import Sequelize from 'sequelize';
 
 export const sequelize = new Sequelize(
 'clinica',
-'postgres',
-'123',
+'blackwatch',
+'1234',
 
 {
     host: 'localhost',

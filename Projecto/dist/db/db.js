@@ -9,7 +9,7 @@ var _sequelize = _interopRequireDefault(require("sequelize"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var sequelize = new _sequelize["default"]('clinica', 'postgres', '1234', {
+var sequelize = new _sequelize["default"]('clinica', 'blackwatch', '1234', {
   host: 'localhost',
   dialect: 'postgres',
   pool: {

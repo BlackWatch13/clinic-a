@@ -6,14 +6,11 @@ const consulta_hojaclinica = sequelize.define('consulta_hojaclinica',{
         type: Sequelize.TEXT,
         primaryKey: true
     },
-    idpaciente:{
-        type: Sequelize.TEXT
-    },
-    iddoctor:{
-        type: Sequelize.TEXT
-    },
     fecha:{
         type: Sequelize.TEXT
+    },
+    hora:{
+     type: Sequelize.TEXT
     },
     motivo_consulta:{
         type: Sequelize.TEXT
@@ -27,13 +24,16 @@ const consulta_hojaclinica = sequelize.define('consulta_hojaclinica',{
     examenes_slt:{
         type: Sequelize.TEXT
     },
-    prescripcion_fc:{
+    idexpe:{
+        type: Sequelize.TEXT
+    },
+    iduser:{
         type: Sequelize.TEXT
     }
-
+ 
 
 },{
-    tableName: 'consulta_hojaclinica',
+    tableName: 'hoja_clinica',
     timestamps: false
 })
 

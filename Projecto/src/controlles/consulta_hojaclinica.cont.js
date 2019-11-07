@@ -4,26 +4,27 @@ import consulta_hojaclinica from "../model/consulta_hojaclinica";
 cuando lo escribi estaba medio dormido y bueno todo tenia sentido para mi.
 */
 export async function crearhoja(req, res){
-    const {idconsulta, idpaciente, iddoctor,fecha, motivo_consulta, peso, evaluacion,examenes_slt,prescripcion_fc}= req.body;
+    const {idconsulta,fecha,hora,motivo_consulta, peso, evaluacion,examenes_slt,idexpe, iduser}= req.body;
     try{
         let newhoja = await consulta_hojaclinica.create(
             {
                 idconsulta,
-                 idpaciente,
-                  iddoctor,
                    fecha,
+                   hora,
                     motivo_consulta,
                      peso,
                      evaluacion,
-                      examenes_slt, 
-                      prescripcion_fc
+                      examenes_slt,
+                      idexpe,
+                      iduser
+                      
             },
             {
-                fields: ['idconsulta', 'idpaciente', 'iddoctor','fecha', 'motivo_consulta', 'peso','evaluacion', 'examenes_slt','prescripcion_fc']
+                fields: ['idconsulta', 'fecha', 'hora','motivo_consulta', 'peso','evaluacion', 'examenes_slt','idexpe','iduser']
             });
             if(newhoja)
             {
-                return res.json({mesage: "Insert successful into consulta_hojaclinica", data : newhoja});
+                return res.json({mesage: "Insert successful into hoja_clinica", data : newhoja});
             }
       
     }
@@ -35,7 +36,7 @@ export async function crearhoja(req, res){
 
 export async function gethoja(req, res){
 
-    const hoja = await consulta_hojaclinica.findAll({atributes:['idconsulta', 'idpaciente', 'iddoctor','fecha', 'motivo_consulta', 'peso','evaluacion', 'examenes_slt','prescripcion_fc']})
+    const hoja = await consulta_hojaclinica.findAll({atributes:['idconsulta', 'fecha', 'hora','motivo_consulta', 'peso','evaluacion', 'examenes_slt','idexpe','iduser']})
     res.json({
         data: hoja
     });
@@ -61,8 +62,8 @@ export async function deletehoja(req, res){
 
 export async function update(req, res){
     const {idconsulta} = req.params;
-    const {idpaciente, iddoctor,fecha, motivo_consulta,peso,evaluacion,examenes_slt,prescripcion_fc} = req.body;
-    const hoja = await consulta_hojaclinica.findAll({attributes:['idconsulta', 'idpaciente', 'iddoctor','fecha', 'motivo_consulta', 'peso','evaluacion', 'examenes_slt','prescripcion_fc'],
+    const {fecha,hora,motivo_consulta, peso, evaluacion,examenes_slt,idexpe, iduser} = req.body;
+    const hoja = await consulta_hojaclinica.findAll({attributes:['fecha', 'hora','motivo_consulta', 'peso','evaluacion', 'examenes_slt','idexpe','iduser'],
         where:{
              idconsulta
         }
@@ -70,13 +71,13 @@ export async function update(req, res){
     if(hoja.length > 0){
         hoja.forEach(async hoja =>{
             await hoja.update({
-                idpaciente,
-                 iddoctor, 
                   fecha,
+                  hora,
                    motivo_consulta, 
                     peso,evaluacion, 
                      examenes_slt, 
-                      prescripcion_fc
+                      idexpe,
+                      iduser
             });
         })
     }
