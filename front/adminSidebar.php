@@ -1,43 +1,37 @@
-
-    <!-- nav -->
-    <nav class="navbar fixed-top flex-column sidebar-fixed navbar-expand-lg navbar-light white scrolling-navbar">
-      <div class="container-fluid" style="padding-right: 2px; padding-left: 2px;">
+<nav id="sidebar" class="custom-scrollbar">
 
 
-        
-  
-        <div class="list-group list-group-flush">
-        <a class="" >
-        <img src="img/logo.jpeg" class="img-fluid" alt="" style= "padding-bottom: 10px;" >
-          <!--<img src="" class="img-fluid" alt="">-->
-        </a>
-          <a href="index.php" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-calendar-alt mr-3"></i>Citas </a>
+            <ul class="list-unstyled components ">
+                <p>HEADER</p>
+                <!-- li class=""-->
+                <li>
+                    <a href="index.php" ><i class="fas fa-calendar-alt mr-3"></i>Citas</a>
+                </li>
+                <li>
+                    <a href="pacientes.php"><i class="fas fa-user mr-3"></i>Pacientes</a>
+                </li>
+                <li>
+                    <a href="registrop.php" ><i class="fas fa-address-card mr-3"></i>Nuevo paciente</a>
+                </li>
+                <li>
+                    <a href="recetasp.php" ><i class="fas fa-edit mr-3"></i>Recetas</a>
+                </li>
+                <li>
+                    <a href="expedientes.php" ><i class="fas fa-archive mr-3 "></i>Expedientes</a>
+                </li>
+                <li>
+                    <a href="cusuarios.php" ><i class="fas fa-street-view mr-3"></i>Usuarios</a>
+                </li>
+                <li>
+                    <a href="userp.php" ><i class="fas fa-user-plus mr-3"></i>Crear Usuarios</a>
+                </li>
+            </ul>
 
-            <a href="pacientes.php" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-user mr-3"></i>Pacientes</a>
+            <ul class="list-unstyled CTAs">
+                 <img src="img/logo.png" class="" alt="" style= "padding: 0px 10px 10px 10px; width: 125px; margin-left: 20% " >
+                   <li>
+                    <a href="#" class="download">Cerrar Sesion</a>
+                </li>
 
-            <a href="registrop.php" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-table mr-3"></i>Nuevo registro</a>
-
-            <a href="doctores.php" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-user-md mr-3"></i>Doctores</a>
-            
-            <a href="Cdoctores.php" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-user-md mr-3"></i>Gestion de doctores</a>
-            
-            <a href="Cpacientes.php" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-user-md mr-3"></i>Gestion de Pacientes</a>
-          
-            <!--a href="Cconsultas.php" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-user-md mr-3"></i>Gestion de consultas</a-->
-            
-            <a href="Cusuarios.php" class="list-group-item list-group-item-action waves-effect">
-            <i class="fas fa-user-md mr-3"></i>Gestion de usuarios</a>
-            <!-- Material input -->
-
-        </div>
-        
-      </div>
-    </nav>
-      <!-- nav -->
+            </ul>
+        </nav>
