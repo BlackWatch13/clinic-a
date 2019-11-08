@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>M</title>
+    <title>Citas</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -15,7 +15,7 @@
     <!-- Your custom styles (optional) -->
     <link href="css/style.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <!-- link href="style.css" rel="stylesheet"-->
 </head>
 
 <body>
@@ -32,7 +32,7 @@
         <div id="content" style="border-bottom-width: 28px;border-bottom-style: solid;">
 
             <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-                <div class="container-fluid">
+                <div class="container-fluid col-2">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
@@ -40,10 +40,18 @@
                     </button>
 
                 </div>
+                <div class="container-fluid col-7">
+                   <h2 class="tituloHeader"> Citas Proximas </h2>
+                </div>
             </nav>
 <div class="container-fluid" style="margin-top:80px">
 
-
+<div class="d-flex p-3 col-example" style="width:80%; float:left;">	
+                <div class="card" style="width:325px;   ">	
+                <div class="card-header">Añadir nueva cita </div>	
+                <div class="card-body text-center"><i class="fas fa-plus fa-6x"></i></div>	
+                <div class="card-footer"></div>	
+</div>
 
      <!-- INSERTAR CONTENIDOS -->
 

@@ -41,10 +41,19 @@ a:focus {
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
 }
-
+.fondoForm
+{
+    /*background-color:#l80d8ff;*/
+    margin-left:15%;
+    font-weight: bold;
+}
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
+.tituloHeader{
+    color:#ec407a;
+    margin-left:15%;
+}
 
 .wrapper {
     display: flex;

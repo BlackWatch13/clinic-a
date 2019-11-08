@@ -1,148 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="css/style.min.css" rel="stylesheet">
-  <style>
-
-    .map-container{
-overflow:hidden;
-padding-bottom:56.25%;
-position:relative;
-height:0;
-}
-.map-container iframe{
-left:0;
-top:0;
-height:100%;
-width:100%;
-position:absolute;
-}
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pacientes</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- link href="style.css" rel="stylesheet"-->
 </head>
 
-<body class="">
+<body>
 
-<header>
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-      <div class="container-fluid text-center">
+    <div class="wrapper">
 
-        <!-- Brand -->
-        <a class="navbar-brand waves-effect"  style="margin-left: 50%;" target="_blank">
-          <H1 class="pink-text">Pacientes</H1>
-        </a>
-
-          <!-- Collapse -->
-
-        </div>
-
-      </div>
-    </nav>
-    <!-- Navbar -->
-
-    <!-- Sidebar -->
-    <?php
+        <div class="navbar">
+        <!-- AQUI VA EL Sidebar  -->
+       <?php
    include 'sidebar.php';
     ?>
-    <!-- Sidebar -->
+      </div>
+        <!-- Page Content  -->
+        <div id="content" style="border-bottom-width: 28px;border-bottom-style: solid;">
 
-  </header>
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <div class="container-fluid col-2">
 
-  <div class="container-fluid text-center wrapper-editor blue lighten-4" style="padding: 95px 0px 0px 280px ">
-<!--Table-->
-<table id="tablePreview" class="table table-striped">
-<!--Table head-->
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Nombre</th>
-      <th>Apellidos</th>
-      <th>Telefono</th>
-      <th>Edad</th>
-      <th>Direccion</th>
-      <th>Padecimiento</th>
-      <th>Alergias</th>
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
 
-    </tr>
-  </thead>
-  <!--Table head-->
-  <!--Table body-->
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Twain</td>
-      <td>22222222</td>
-      <td>33</td>
-      <td>San Salvador, El salvador</td>
-      <td>Colon nervioso</td>
-      <td>Ninguna</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Mauricio</td>
-      <td>Padilla</td>
-      <td>77777777</td>
-      <td>45</td>
-      <td>Quezaltepeque, La libertad</td>
-      <td>Problemas respiratorios</td>
-      <td>Mani, maiz, chocolate</td>
+                    </button>
 
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Enrique</td>
-      <td>Carabantes</td>
-      <td>76472345</td>
-      <td>46</td>
-      <td>Quezaltepec, La libertad</td>
-      <td>Acaros en la piel</td>
-      <td>A ciertos medicamentos contra las alergias</td>
+                </div>
+                <div class="container-fluid col-7">
+                   <h2 class="tituloHeader"> Pacientes </h2>
+                </div>
+            </nav>
+<div class="container-fluid" style="margin-top:80px">
+<div class="card card-cascade narrower">
 
-    </tr>
-  </tbody>
-  <!--Table body-->
-</table>
-<!--Table-->
+  <!--Card image-->
+  <div
+    class="view view-cascade gradient-card-header blue-gradient narrower py-2  mb-3 d-flex justify-content-between align-items-center">
 
+    <!--div>
+      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+        <i class="fas fa-th-large mt-0"></i>
+      </button>
+      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+        <i class="fas fa-columns mt-0"></i>
+      </button>
+    </div-->
+
+    <a href="" class="white-text mx-4">Table name</a>
+
+    <!-- div>
+      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+        <i class="fas fa-pencil-alt mt-0"></i>
+      </button>
+      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+        <i class="far fa-trash-alt mt-0"></i>
+      </button>
+      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+        <i class="fas fa-info-circle mt-0"></i>
+      </button>
+    </div-->
+
+  </div>
+  <!--/Card image-->
+
+  <div class="px-4">
+
+    <div class="table-wrapper">
+      <!--Table-->
+      <table id="mainTable" class="table table-hover mb-0">
+
+        <!--Table head-->
+        <thead>
+          <tr>
+            
+            <th class="th-lg">
+              <a>First Name
+                <i class="fas fa-sort ml-1"></i>
+              </a>
+            </th>
+            <th class="th-lg">
+              <a href="">Last Name
+                <i class="fas fa-sort ml-1"></i>
+              </a>
+            </th>
+            <th class="th-lg">
+              <a href="">Username
+                <i class="fas fa-sort ml-1"></i>
+              </a>
+            </th>
+            <th class="th-lg">
+              <a href="">Username
+                <i class="fas fa-sort ml-1"></i>
+              </a>
+            </th>
+            <th class="th-lg">
+              <a href="">Username
+                <i class="fas fa-sort ml-1"></i>
+              </a>
+            </th>
+            <th class="th-lg">
+              <a href="">Username
+                <i class="fas fa-sort ml-1"></i>
+              </a>
+            </th>
+          </tr>
+        </thead>
+        <!--Table head-->
+
+        <!--Table body-->
+        <tbody>
+          <tr>
+            
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+           
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          <tr>
+            
+            <td>Paul</td>
+            <td>Topolski</td>
+            <td>@P_Topolski</td>
+            <td>Paul</td>
+            <td>Topolski</td>
+            <td>@P_Topolski</td>
+          </tr>
+          <tr>
+            
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+        <!--Table body-->
+      </table>
+      <!--Table-->
     </div>
 
+  </div>
+
+</div>
+<!-- Table with panel -->
+
+     <!-- INSERTAR CONTENIDOS -->
 
 
-<!--Footer-->
-<?php
+
+</div>
+        </div>
+    </div>
+    <!-- AQUI VA EL FOOTER -->
+    <?php
     include 'footer.php';
     ?>
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- Initializations -->
-  <script type="text/javascript">
-    $('#dtBasicExample-1').mdbEditor({
-rowEditor: true
-});
-$('.dataTables_length').addClass('bs-select');
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./js/mindmup-editabletable.js"></script>
 
-  </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
 
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+
+       
+  $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+  $('#textAreaEditor').editableTableWidget({editor: $('<textarea>')});
+  window.prettyPrint && prettyPrint();
+
+    </script>
 </body>
 
 </html>

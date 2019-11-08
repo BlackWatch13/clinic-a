@@ -1,93 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="css/style.min.css" rel="stylesheet">
- <!-- estilos para el formulario-->
-<!--JQUERY-->
-<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	
-	<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script 
-		src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script 
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	
-	<!-- Los iconos tipo Solid de Fontawesome-->
-	<link rel="stylesheet"
-		href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-	
-	<!-- Nuestro css-->
-	<link rel="stylesheet" type="text/css" href="static/css/user-form.css"
-		th:href="@{/css/user-form.css}">
-	<!-- DATA TABLE -->
-	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">	
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
-	<script type="text/javascript">
-	    $(document).ready(function() {
-	        //Asegurate que el id que le diste a la tabla sea igual al texto despues del simbolo #
-	        $('#userList').DataTable();
-	    } );
-	</script>
-<!--fin de estilos para el formulario-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Citas</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- link href="style.css" rel="stylesheet"-->
 </head>
 
-<body class="">
+<body>
 
-  <!--Main Navigation-->
-  <header>
+    <div class="wrapper">
 
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-      <div class="container-fluid text-center">
-
-        <!-- Brand -->
-        <a class="navbar-brand waves-effect"  style="margin-left: 50%;" target="_blank">
-          <H1 class="pink-text">Nuevo Registro</H1>
-        </a>
-
-          <!-- Collapse -->
-
-        </div>
-
-      </div>
-    </nav>
-    <!-- Navbar -->
-
-    <!-- Sidebar -->
-    <?php
+        <div class="navbar">
+        <!-- AQUI VA EL Sidebar  -->
+       <?php
    include 'sidebar.php';
     ?>
-    <!-- Sidebar -->
+      </div>
+        <!-- Page Content  -->
+        <div id="content" style="border-bottom-width: 28px;border-bottom-style: solid;">
 
-  </header>
-  <!--Main Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <div class="container-fluid col-2">
 
-  <!--Main layout-->
-<div class="container-fluid" style="padding: 91px 20px 0px 280px;">
-      
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
 
-				<div >
+                    </button>
+
+                </div>
+                <div class="container-fluid col-7">
+                   <h2 class="tituloHeader"> Citas Proximas </h2>
+                </div>
+            </nav>
+<div class="container-fluid" style="margin-top:60px">
+
+
+     <!-- INSERTAR CONTENIDOS -->
+
+	 <div class="fondoForm  light-blue accent-1">
 					<div class="card-header">
 						<h4>Informacion del Paciente </h4>
 					</div>
@@ -96,43 +58,43 @@
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Nombre</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" >
+									<input class="form-control" type="text" placeholder="Ingrese nombre">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Apellidos</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" >
+									<input class="form-control" type="text" placeholder="Ingrese Apellido">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Telefono</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text">
+									<input class="form-control" type="text" placeholder="XXXX-XXXX">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Edad</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text">
+									<input class="form-control" type="text" placeholder="XX">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Dirrecion</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text">
+									<input class="form-control" type="text" placeholder="Ingrese Direccion">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Padecimiento</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text">
+									<input class="form-control" type="text" placeholder="Ingrese padecimiento">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Alergias</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text">
+									<input class="form-control" type="text" placeholder="Ingrese alergias (si existen)">
 								</div>
 							</div>
 							<div class="form-group row">
@@ -145,34 +107,37 @@
 						</form>
 					</div>
 				</div>
-			  
-</div>  
-      
+				<!-- FIN CONTENIDO-->
+
 </div>
-<!--Footer-->
-<?php
+        </div>
+    </div>
+    <!-- AQUI VA EL FOOTER -->
+    <?php
     include 'footer.php';
     ?>
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- Initializations -->
-  <script type="text/javascript">
-    // Animations initialization
-    new WOW().init();
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-  </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
 
-  <!-- Charts -->
- 
-
- 
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 
 </html>

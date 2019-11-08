@@ -6,16 +6,16 @@
             <ul class="list-unstyled components">
                 <p>HEADER</p>
                 <li class="active">
-                    <a href="#" ><i class="fas fa-calendar-alt mr-3"></i>Citas</a>
+                    <a href="./index.php" ><i class="fas fa-calendar-alt mr-3"></i>Citas</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fas fa-user mr-3"></i>Pacientes</a>
+                    <a href="./pacientes.php"><i class="fas fa-user mr-3"></i>Pacientes</a>
                 </li>
                 <li>
-                    <a href="#" ><i class="fas fa-table mr-3"></i>Nuevo Registro</a>
+                    <a href="./registrop.php" ><i class="fas fa-table mr-3"></i>Nuevo Registro</a>
                 </li>
                 <li>
-                    <a href="#"> <i class="fas fa-user-md mr-3"></i>Doctores</a>
+                    <a href="./doctores.php"> <i class="fas fa-user-md mr-3"></i>Doctores</a>
                 </li>
             </ul>
 
