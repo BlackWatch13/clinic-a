@@ -11,7 +11,7 @@
        <form class="" action="" method="get">
     <input type="text" name="ruta" value="">
     <button type="submit" name="button">Enviar</button>
-       </form> 
+       </form>
 </body>
 </html>
 
@@ -24,10 +24,14 @@
         $url = "http://localhost:3000/api/".$ruta;
         $json = file_get_contents($url);
         $datos = json_decode($json, true);
-        $nombre = $datos["data"];
-        var_dump($nombre);
+        $data = $datos["data"];
+        //var_dump($nombre);
+        foreach($data as $datos)
+        {
+          var_dump($datos);
+        }
     }
-  
+
 
 
 

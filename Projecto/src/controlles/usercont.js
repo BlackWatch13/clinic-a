@@ -2,7 +2,7 @@ import user from '../model/user';
 
 
 export async function getuser(req, res){
-    const users = await user.findAll({attributes:['iduser','nombre','apellido','estado','especialidad']});
+    const users = await user.findAll({attributes:['iduser','nombre','apellido','estado','pass']});
     res.json({
         data: users
     });
@@ -34,7 +34,7 @@ export async function deleteuser(req, res){
 export async function updateuser(req, res){
     const {iduser} = req.params;
     const {nombre, apellido, estado,especialidad} = req.body;
-    const user3 = await user.findAll({attributes:['iduser','nombre','apellido','estado','especialidad'],
+    const user3 = await user.findAll({attributes:['iduser','nombre','apellido','estado','pass'],
         where:{
              iduser
         }
@@ -66,7 +66,7 @@ export async function crearuser(req, res) {
             estado,
             especialidad
         },{
-            fields: ['iduser','nombre','apellido','estado','especialidad']
+            fields: ['iduser','nombre','apellido','estado','pass']
         });
         if (newuser) {
            return res.json({
