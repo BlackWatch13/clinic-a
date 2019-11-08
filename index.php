@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <form action="test/validar_usuario" method="post">
+    <form action="./test/validar_usuario.php" method="post">
         <div class="login-wrap">
             <div class="login-html">
                 <input id="tab-1" type="radio" name="tab" class="sign-in" checked>

@@ -7,7 +7,7 @@
     session_start();
 
 //AQUI CONECTAMOS A LA BASE DE DATOS DE POSTGRES
-$conex = "host=localhost port=5432 dbname=clinica user=postgres password=1234";
+$conex = "host=localhost port=5432 dbname=clinica user=blackwatch password=1234";
 $cnx = pg_connect($conex) or die ("<h1>Error de conexion.</h1> ". pg_last_error());
 
 
@@ -22,7 +22,7 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
 
  $usuario = strtolower(htmlentities($_POST["usuario"], ENT_QUOTES));
  $password = $_POST["password"];
- $result = pg_query('SELECT iduser,pass, estado FROM public.usuarios where iduser = \''.$usuario.'\'');
+ $result = pg_query('SELECT iduser,pass, estado FROM public.user where iduser = \''.$usuario.'\'');
  if($row = pg_fetch_array($result)){
   if($row["pass"] == $password){
    $_SESSION["k_username"] = $row['iduser'];
@@ -34,19 +34,24 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
             $_SESSION['rol'] = "admin";
 
    }
-    else{
+    else if($row["estado"]== 2){
         //mandalo a las pantallas de usuario
             header('location:../front/index.php');
 
             $_SESSION['log_in'] = true;
-            $_SESSION['rol'] = "regular";
+            $_SESSION['rol'] = "recepcionista";
 
     }
-  }else{
-   echo 'Password incorrecto';
+  }else if($row["estado"]== 3){
+    /mandalo a las pantallas de usuario
+        header('location:../front/index.php');
+
+        $_SESSION['log_in'] = true;
+        $_SESSION['rol'] = "doctor";
   }
  }else{
-  echo 'Usuario no existente en la base de datos';
+  echo '<script>alert:"usuario o contraseña invalidos"</script>';
+    header('location:./index.php');
 
  }
  pg_free_result($result);
