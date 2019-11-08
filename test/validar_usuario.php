@@ -5,7 +5,7 @@
     session_destroy();
 
     session_start();
-
+    $_SESSION["newsession"]=$value;
 //AQUI CONECTAMOS A LA BASE DE DATOS DE POSTGRES
 $conex = "host=localhost port=5432 dbname=clinica user=blackwatch password=1234";
 $cnx = pg_connect($conex) or die ("<h1>Error de conexion.</h1> ". pg_last_error());
@@ -31,7 +31,7 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
             header('location:../front/index.php');
 
             $_SESSION['log_in'] = true;
-            $_SESSION['rol'] = "admin";
+            $_SESSION["rol"] = "admin";
 
    }
     else if($row["estado"]== 2){
@@ -39,7 +39,7 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
             header('location:../front/index.php');
 
             $_SESSION['log_in'] = true;
-            $_SESSION['rol'] = "recepcionista";
+            $_SESSION["rol"] = "recepcionista";
 
     }
   }else if($row["estado"]== 3){
@@ -47,7 +47,7 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
         header('location:../front/index.php');
 
         $_SESSION['log_in'] = true;
-        $_SESSION['rol'] = "doctor";
+        $_SESSION["rol"] = "doctor";
   }
  }else{
   echo '<script>alert("usuario o contraseña invalidos");</script>';
