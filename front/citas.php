@@ -44,66 +44,70 @@
                    <h2 class="tituloHeader"> Citas Proximas </h2>
                 </div>
             </nav>
-<div class="container-fluid" style="margin-top:80px">
+<div class="container-fluid" style="margin-top:60px">
 
-<div class="d-flex p-3 col-example" style="width:80%; float:left;">	
-                <div class="card" style="width:325px;   ">	
-                <div class="card-header">Añadir nueva cita </div>	
-                <div class="card-body text-center"> <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm"><i class="fas fa-plus fa-6x"></i></a></div>	
-                <div class="card-footer"></div>	
-</div>
 
      <!-- INSERTAR CONTENIDOS -->
-     <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Nueva Cita</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <i class="far fa-calendar-alt prefix grey-text"></i>
-          <input name="fecha" type="date" id="defaultForm-email" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-email">Ingresar fecha</label>
-        </div>
 
-        <div class="md-form mb-5">
-          <i class="far fa-clock prefix grey-text"></i>
-          <input name="hora" type="time" id="defaultForm-email" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-email">Ingresar Hora</label>
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="fas fa-user-injured prefix grey-text"></i>
-          <input name="idpaciente" type="email" id="defaultForm-email" class="form-control validate" placeholder="paciente">
-          <label data-error="wrong" data-success="right" for="defaultForm-email"></label>
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="fas fa-user-md prefix grey-text"></i>
-          <input name="doctor" type="email" id="defaultForm-email" class="form-control validate" placeholder="doctor">
-          <label data-error="wrong" data-success="right" for="defaultForm-email"></label>
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="fas fa-certificate prefix grey-text"></i>
-          <input name="especialidad" type="email" id="defaultForm-email" class="form-control validate" placeholder="Especialidad">
-          <label data-error="wrong" data-success="right" for="defaultForm-email"></label>
-        </div>
-
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-default">Guardar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+	 <div class="fondoForm  light-blue accent-1">
+					<div class="card-header">
+						<h4>Informacion del Paciente </h4>
+					</div>
+					<div class="card-body">
+						<form class="form" role="form" autocomplete="off">
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="text" placeholder="Ingrese nombre">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Apellidos</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="text" placeholder="Ingrese Apellido">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Telefono</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="text" placeholder="XXXX-XXXX">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Edad</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="text" placeholder="XX">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Dirrecion</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="text" placeholder="Ingrese Direccion">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Padecimiento</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="text" placeholder="Ingrese padecimiento">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Alergias</label>
+								<div class="col-lg-9">
+									<input class="form-control" type="text" placeholder="Ingrese alergias (si existen)">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-lg-12 text-center">
+									<input type="reset" class="btn btn-secondary" value="Cancelar">
+									<input type="button" class="btn btn-primary"
+										value="Guardar">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- FIN CONTENIDO-->
 
 </div>
         </div>

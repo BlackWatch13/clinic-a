@@ -54,53 +54,53 @@
 						<h4>Informacion del Paciente </h4>
 					</div>
 					<div class="card-body">
-						<form class="form" role="form" autocomplete="off">
+						<form class="form" role="form" autocomplete="off" method="post">
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Nombre</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" placeholder="Ingrese nombre">
+									<input name="nombre" class="form-control" type="text" placeholder="Ingrese nombre">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Apellidos</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" placeholder="Ingrese Apellido">
+									<input name="apellido" class="form-control" type="text" placeholder="Ingrese Apellido">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Telefono</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" placeholder="XXXX-XXXX">
+									<input name="telefono" class="form-control" type="text" placeholder="XXXX-XXXX">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Edad</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" placeholder="XX">
+									<input name="edad" type="number" class="form-control" type="text" placeholder="XX">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Dirrecion</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" placeholder="Ingrese Direccion">
+									<input name="direccion" class="form-control" type="text" placeholder="Ingrese Direccion">
 								</div>
-							</div>
-							<div class="form-group row">
-								<label class="col-lg-3 col-form-label form-control-label">Padecimiento</label>
+                            </div>
+                            
+                            <div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Sexo</label>
 								<div class="col-lg-9">
-									<input class="form-control" type="text" placeholder="Ingrese padecimiento">
+                                <select name="sexo" class="browser-default custom-select">
+                                <option selected>Seleccione</option>
+                                <option value="1">Hombre</option>
+                                <option value="2">Mujer</option>
+                                </select>
 								</div>
 							</div>
-							<div class="form-group row">
-								<label class="col-lg-3 col-form-label form-control-label">Alergias</label>
-								<div class="col-lg-9">
-									<input class="form-control" type="text" placeholder="Ingrese alergias (si existen)">
-								</div>
-							</div>
+
 							<div class="form-group row">
 								<div class="col-lg-12 text-center">
 									<input type="reset" class="btn btn-secondary" value="Cancelar">
-									<input type="button" class="btn btn-primary"
+									<input type="submit" class="btn btn-primary"
 										value="Guardar">
 								</div>
 							</div>
@@ -108,6 +108,44 @@
 					</div>
 				</div>
 				<!-- FIN CONTENIDO-->
+
+                <?php 
+if (isset($_POST["nombre"]))
+{
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST["apellido"];
+    $telefono = $_POST["telefono"];
+    $edad = $_POST["edad"];
+    $direccion = $_POST["direccion"];
+    $sexo = $_POST["sexo"];
+
+     $url = "http://localhost:3000/api/pacientes";
+     $data = array(
+        'idpaciente' => $nombre.$telefono,
+        'nombre'=> $nombre,
+        'apellido' => $apellido,
+        'telefono' => $telefono,
+        'edad' => $edad,
+        'direccion' => $direccion,
+        'sexo' => $sexo
+        
+    );
+    $payload = json_encode($data);
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_HEADER, false);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER,
+        array("Content-type: application/json"));
+    curl_setopt($curl, CURLOPT_POST, true); 
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
+    $json_response = curl_exec($curl);
+    $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    curl_close($curl);
+
+}
+?>
+
+
 
 </div>
         </div>

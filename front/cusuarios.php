@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Pacientes</title>
+    <title>Usuarios</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -41,7 +41,7 @@
 
                 </div>
                 <div class="container-fluid col-7">
-                   <h2 class="tituloHeader"> Pacientes </h2>
+                   <h2 class="tituloHeader"> Usuarios </h2>
                 </div>
             </nav>
 <div class="container-fluid" style="margin-top:80px">
@@ -86,9 +86,9 @@
         <!--Table head-->
         <thead>
           <tr>
-
+            
             <th class="th-lg">
-              <a>ID
+              <a>Username
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
@@ -103,22 +103,17 @@
               </a>
             </th>
             <th class="th-lg">
-              <a href="">Telefono
+              <a href="">Estado
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
             <th class="th-lg">
-              <a href="">Edad
+              <a href="">Especialidad
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
             <th class="th-lg">
-              <a href="">Dirección
-                <i class="fas fa-sort ml-1"></i>
-              </a>
-            </th>
-            <th class="th-lg">
-              <a href="">Sexo
+              <a href="">Contraseña
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
@@ -128,25 +123,16 @@
 
         <!--Table body-->
         <tbody>
-          <?php
-          $url = "http://localhost:3000/api/pacientes";
-          $json = file_get_contents($url);
-          $datos = json_decode($json, true);
-          $data = $datos["data"];
-
-          foreach($data as $datos)
-          {
-            echo "<tr>";
-
-            foreach($datos as $info)
-            {
-              echo "<td>";
-              echo($info);
-              echo("</td>");
-            }
-            echo "</tr>";
-          }
-          ?>
+          <tr>
+            
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+         
         </tbody>
         <!--Table body-->
       </table>
@@ -192,7 +178,7 @@
             });
         });
 
-
+       
   $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
   $('#textAreaEditor').editableTableWidget({editor: $('<textarea>')});
   window.prettyPrint && prettyPrint();
