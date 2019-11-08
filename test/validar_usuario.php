@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
     session_start();
     $_SESSION = array();
     session_destroy();
@@ -45,14 +43,14 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
 
     }
   }else if($row["estado"]== 3){
-    /mandalo a las pantallas de usuario
+    //mandalo a las pantallas de usuario
         header('location:../front/index.php');
 
         $_SESSION['log_in'] = true;
         $_SESSION['rol'] = "doctor";
   }
  }else{
-  echo '<script>alert:"usuario o contraseña invalidos"</script>';
+  echo '<script>alert("usuario o contraseña invalidos");</script>';
     header('location:./index.php');
 
  }
