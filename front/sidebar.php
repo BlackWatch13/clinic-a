@@ -16,11 +16,11 @@ else if ($_SESSION["rol"]=="doctor") {
 }
 else
 {
-  header('location:./index.php');
+  header('location:../index.php');
 }
 
 }
 else {
-  header('location:./index.php');
+  header('location:../index.php');
 }
   ?>
