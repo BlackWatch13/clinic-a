@@ -10,6 +10,9 @@ const receta = sequelize.define('receta',{
     medicamento:{
         type: Sequelize.TEXT
     },
+    nombdr:{
+        type: Sequelize.TEXT
+    },
     nombpac:{
         type: Sequelize.TEXT
     },

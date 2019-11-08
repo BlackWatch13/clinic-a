@@ -17,6 +17,9 @@ const user =sequelize.define('user',{
     },
     especialidad:{
         type: Sequelize.TEXT
+    },
+    pass:{
+        type: Sequelize.TEXT
     }
 },{
     tableName: 'user',

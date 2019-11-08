@@ -16,17 +16,18 @@ function _main() {
   _main = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee() {
+    var server, io;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
-            return _app["default"].listen(3000);
+            server = require('http').createServer(_app["default"]);
+            io = require('socket.io')(server);
+            io.on('connection', function () {});
+            server.listen(3000);
+            console.log('Server en puerto 3000');
 
-          case 2:
-            console.log('Server on port 3000');
-
-          case 3:
+          case 5:
           case "end":
             return _context.stop();
         }

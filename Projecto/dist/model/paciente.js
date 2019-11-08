@@ -9,8 +9,6 @@ var _sequelize = _interopRequireDefault(require("sequelize"));
 
 var _db = require("../db/db");
 
-var _consulta_hojaclinica = _interopRequireDefault(require("./consulta_hojaclinica"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var paciente = _db.sequelize.define('paciente', {
@@ -21,7 +19,7 @@ var paciente = _db.sequelize.define('paciente', {
   nombre: {
     type: _sequelize["default"].TEXT
   },
-  apellidos: {
+  apellido: {
     type: _sequelize["default"].TEXT
   },
   telefono: {
@@ -33,22 +31,13 @@ var paciente = _db.sequelize.define('paciente', {
   direccion: {
     type: _sequelize["default"].TEXT
   },
-  enferpade: {
-    type: _sequelize["default"].TEXT
-  },
-  alergias: {
-    type: _sequelize["default"].TEXT
-  },
   sexo: {
     type: _sequelize["default"].TEXT
   }
 }, {
-  tableName: 'paciente',
+  tableName: 'pacientes',
   timestamps: false
-}); //agregar relacion antes de exportar
-//paciente.hasMany(consulta_hojaclinica,{foreingKey: 'idpaciente', sourceKey: 'idconsulta' });
-//consulta_hojaclinica.belongTo(paciente,{foreingKey: 'idpaciente', sourceKey:'idconsulta'});
-
+});
 
 var _default = paciente;
 exports["default"] = _default;

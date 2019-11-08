@@ -83,3 +83,12 @@ export async function updatepacientewhere(req, res){
 
 
 
+//reportes
+
+export async function getpacientewheresexo(req, res){
+    const {sexo} = req.params;
+  const paciente1 = await paciente.findAll({
+      where : {sexo:sexo}
+  });
+res.json({data: paciente1})
+};

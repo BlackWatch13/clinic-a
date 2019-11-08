@@ -44,7 +44,7 @@ export async function gethoja(req, res){
 
 export async function gethojawhere(req, res){
     const {idconsulta} = req.params;
-    const hoja = await consulta_hojaclinica.findOne({were:{idconsulta},atributes:['idconsulta', 'idpaciente', 'iddoctor','fecha', 'motivo_consulta', 'peso','evaluacion', 'examenes_slt','prescripcion_fc']})
+    const hoja = await consulta_hojaclinica.findAll({were:{idconsulta:idconsulta},atributes:['idconsulta', 'idpaciente', 'iddoctor','fecha', 'motivo_consulta', 'peso','evaluacion', 'examenes_slt','prescripcion_fc']})
     res.json({
         data:hoja
     })

@@ -8,6 +8,7 @@ exports.crearpaciente = crearpaciente;
 exports.getpacientewhere = getpacientewhere;
 exports.deletepacientewhere = deletepacientewhere;
 exports.updatepacientewhere = updatepacientewhere;
+exports.getpacientewheresexo = getpacientewheresexo;
 
 var _paciente = _interopRequireDefault(require("../model/paciente"));
 
@@ -32,7 +33,7 @@ function _getpaciente() {
           case 0:
             _context.next = 2;
             return _paciente["default"].findAll({
-              attributes: ['idpaciente', 'nombre', 'apellidos', 'telefono', 'edad', 'direccion', 'enferpade', 'alergias', 'sexo']
+              attributes: ['idpaciente', 'nombre', 'apellido', 'telefono', 'edad', 'direccion', 'sexo']
             });
 
           case 2:
@@ -61,27 +62,25 @@ function _crearpaciente() {
   _crearpaciente = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee2(req, res) {
-    var _req$body, idpaciente, nombre, apellidos, telefono, edad, direccion, enferpade, alergias, sexo, newpaciente;
+    var _req$body, idpaciente, nombre, apellido, telefono, edad, direccion, sexo, newpaciente;
 
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            _req$body = req.body, idpaciente = _req$body.idpaciente, nombre = _req$body.nombre, apellidos = _req$body.apellidos, telefono = _req$body.telefono, edad = _req$body.edad, direccion = _req$body.direccion, enferpade = _req$body.enferpade, alergias = _req$body.alergias, sexo = _req$body.sexo;
+            _req$body = req.body, idpaciente = _req$body.idpaciente, nombre = _req$body.nombre, apellido = _req$body.apellido, telefono = _req$body.telefono, edad = _req$body.edad, direccion = _req$body.direccion, sexo = _req$body.sexo;
             _context2.prev = 1;
             _context2.next = 4;
             return _paciente["default"].create({
               idpaciente: idpaciente,
               nombre: nombre,
-              apellidos: apellidos,
+              apellido: apellido,
               telefono: telefono,
               edad: edad,
               direccion: direccion,
-              enferpade: enferpade,
-              alergias: alergias,
               sexo: sexo
             }, {
-              fields: ['idpaciente', 'nombre', 'apellidos', 'telefono', 'edad', 'direccion', 'enferpade', 'alergias', 'sexo']
+              fields: ['idpaciente', 'nombre', 'apellido', 'telefono', 'edad', 'direccion', 'sexo']
             });
 
           case 4:
@@ -137,11 +136,10 @@ function _getpacientewhere() {
           case 0:
             idpaciente = req.params.idpaciente;
             _context3.next = 3;
-            return _paciente["default"].findOne({
+            return _paciente["default"].findAll({
               where: {
                 idpaciente: idpaciente
-              },
-              attributes: ['idpaciente', 'nombre', 'apellidos', 'telefono', 'edad', 'direccion', 'enferpade', 'alergias', 'sexo']
+              }
             });
 
           case 3:
@@ -204,23 +202,24 @@ function _deletepacientewhere() {
 
 function updatepacientewhere(_x9, _x10) {
   return _updatepacientewhere.apply(this, arguments);
-}
+} //reportes
+
 
 function _updatepacientewhere() {
   _updatepacientewhere = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee6(req, res) {
-    var idpaciente, _req$body2, nombre, apellidos, telefono, edad, direccion, enferpade, alergias, sexo, paciente3;
+    var idpaciente, _req$body2, nombre, apellido, telefono, edad, direccion, enferpade, alergias, sexo, paciente3;
 
     return regeneratorRuntime.wrap(function _callee6$(_context6) {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
             idpaciente = req.params.idpaciente;
-            _req$body2 = req.body, nombre = _req$body2.nombre, apellidos = _req$body2.apellidos, telefono = _req$body2.telefono, edad = _req$body2.edad, direccion = _req$body2.direccion, enferpade = _req$body2.enferpade, alergias = _req$body2.alergias, sexo = _req$body2.sexo;
+            _req$body2 = req.body, nombre = _req$body2.nombre, apellido = _req$body2.apellido, telefono = _req$body2.telefono, edad = _req$body2.edad, direccion = _req$body2.direccion, enferpade = _req$body2.enferpade, alergias = _req$body2.alergias, sexo = _req$body2.sexo;
             _context6.next = 4;
             return _paciente["default"].findAll({
-              attributes: ['idpaciente', 'nombre', 'apellidos', 'telefono', 'edad', 'direccion', 'enferpade', 'alergias', 'sexo'],
+              attributes: ['idpaciente', 'nombre', 'apellido', 'telefono', 'edad', 'direccion', 'sexo'],
               where: {
                 idpaciente: idpaciente
               }
@@ -243,12 +242,10 @@ function _updatepacientewhere() {
                           _context5.next = 2;
                           return paciente3.update({
                             nombre: nombre,
-                            apellidos: apellidos,
+                            apellido: apellido,
                             telefono: telefono,
                             edad: edad,
                             direccion: direccion,
-                            enferpade: enferpade,
-                            alergias: alergias,
                             sexo: sexo
                           });
 
@@ -260,7 +257,7 @@ function _updatepacientewhere() {
                   }, _callee5);
                 }));
 
-                return function (_x11) {
+                return function (_x13) {
                   return _ref.apply(this, arguments);
                 };
               }());
@@ -280,3 +277,42 @@ function _updatepacientewhere() {
   }));
   return _updatepacientewhere.apply(this, arguments);
 }
+
+function getpacientewheresexo(_x11, _x12) {
+  return _getpacientewheresexo.apply(this, arguments);
+}
+
+function _getpacientewheresexo() {
+  _getpacientewheresexo = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee7(req, res) {
+    var sexo, paciente1;
+    return regeneratorRuntime.wrap(function _callee7$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            sexo = req.params.sexo;
+            _context7.next = 3;
+            return _paciente["default"].findAll({
+              where: {
+                sexo: sexo
+              }
+            });
+
+          case 3:
+            paciente1 = _context7.sent;
+            res.json({
+              data: paciente1
+            });
+
+          case 5:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, _callee7);
+  }));
+  return _getpacientewheresexo.apply(this, arguments);
+}
+
+;

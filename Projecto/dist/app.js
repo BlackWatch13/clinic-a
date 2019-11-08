@@ -11,13 +11,15 @@ var _morgan = _interopRequireDefault(require("morgan"));
 
 var _paciente = _interopRequireDefault(require("./routes/paciente"));
 
-var _doctor = _interopRequireDefault(require("./routes/doctor"));
-
 var _consulta_hojaclinica = _interopRequireDefault(require("./routes/consulta_hojaclinica"));
 
-var _detalle_factura = _interopRequireDefault(require("./routes/detalle_factura"));
-
 var _proximact = _interopRequireDefault(require("./routes/proximact"));
+
+var _user = _interopRequireDefault(require("./routes/user"));
+
+var _expe = _interopRequireDefault(require("./routes/expe"));
+
+var _recetas = _interopRequireDefault(require("./routes/recetas"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -32,9 +34,10 @@ app.use((0, _morgan["default"])('dev'));
 app.use((0, _express.json)()); //rutas
 
 app.use('/api/pacientes', _paciente["default"]);
-app.use('/api/doctor', _doctor["default"]);
 app.use('/api/hoja', _consulta_hojaclinica["default"]);
-app.use('/api/defactu', _detalle_factura["default"]);
 app.use('/api/proxima', _proximact["default"]);
+app.use('/api/user', _user["default"]);
+app.use('/api/expe', _expe["default"]);
+app.use('/api/recetas', _recetas["default"]);
 var _default = app;
 exports["default"] = _default;

@@ -11,30 +11,45 @@ var _db = require("../db/db");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var proximact = _db.sequelize.define('proximact', {
-  idproximact: {
+var receta = _db.sequelize.define('receta', {
+  idrec: {
     type: _sequelize["default"].TEXT,
     primaryKey: true
   },
-  fecha: {
+  medicamento: {
     type: _sequelize["default"].TEXT
   },
-  hora: {
+  nombdr: {
     type: _sequelize["default"].TEXT
   },
-  idpaciente: {
+  nombpac: {
     type: _sequelize["default"].TEXT
   },
-  doctor: {
+  edad: {
+    type: _sequelize["default"].INTEGER
+  },
+  sexo: {
     type: _sequelize["default"].TEXT
   },
-  especialidad: {
+  dosis: {
+    type: _sequelize["default"].TEXT
+  },
+  formed: {
+    type: _sequelize["default"].TEXT
+  },
+  viadmi: {
+    type: _sequelize["default"].TEXT
+  },
+  cantpre: {
+    type: _sequelize["default"].TEXT
+  },
+  idconsulta: {
     type: _sequelize["default"].TEXT
   }
 }, {
-  tableName: 'proxcita',
+  tableName: 'recetas',
   timestamps: false
 });
 
-var _default = proximact;
+var _default = receta;
 exports["default"] = _default;

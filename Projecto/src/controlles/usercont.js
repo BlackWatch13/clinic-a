@@ -2,7 +2,7 @@ import user from '../model/user';
 
 
 export async function getuser(req, res){
-    const users = await user.findAll({attributes:['iduser','nombre','apellido','estado','especialidad']});
+    const users = await user.findAll({attributes:['iduser','nombre','apellido','estado','especialidad','pass']});
     res.json({
         data: users
     });
@@ -33,8 +33,8 @@ export async function deleteuser(req, res){
 
 export async function updateuser(req, res){
     const {iduser} = req.params;
-    const {nombre, apellido, estado,especialidad} = req.body;
-    const user3 = await user.findAll({attributes:['iduser','nombre','apellido','estado','especialidad'],
+    const {nombre, apellido, estado,especialidad, pass} = req.body;
+    const user3 = await user.findAll({attributes:['iduser','nombre','apellido','estado','especialidad','pass'],
         where:{
              iduser
         }
@@ -45,7 +45,8 @@ export async function updateuser(req, res){
                 nombre,
                 apellido,
                 estado,
-                especialidad
+                especialidad,
+                pass
             });
         })
     }
@@ -57,16 +58,17 @@ export async function updateuser(req, res){
 };
 
 export async function crearuser(req, res) {
-    const { iduser,nombre,apellido,estado,especialidad} = req.body;
+    const { iduser,nombre,apellido,estado,especialidad,pass} = req.body;
     try {
         let newuser = await user.create({
             iduser,
             nombre,
             apellido,
             estado,
-            especialidad
+            especialidad,
+            pass
         },{
-            fields: ['iduser','nombre','apellido','estado','especialidad']
+            fields: ['iduser','nombre','apellido','estado','especialidad','pass']
         });
         if (newuser) {
            return res.json({
@@ -79,3 +81,25 @@ export async function crearuser(req, res) {
       res.status(500).json({message:'Error' ,data:{} })
     }
 };
+
+
+// Saber cuantos son X rol where Estado = X
+
+export async function getuserestado(req , res) {
+    const {estado} = req.params;
+    const user1 = await user.findAll({where : {estado: estado}
+    });
+  res.json({data: user1})
+  };
+
+  export async function getuserespe(req , res) {
+    const {especialidad} = req.params;
+    const user1 = await user.findAll({where : {especialidad: especialidad}
+    });
+  res.json({data: user1})
+  };
+  
+
+
+
+

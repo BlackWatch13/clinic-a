@@ -11,30 +11,24 @@ var _db = require("../db/db");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var proximact = _db.sequelize.define('proximact', {
-  idproximact: {
+var expediente = _db.sequelize.define('expediente', {
+  idexpe: {
     type: _sequelize["default"].TEXT,
     primaryKey: true
-  },
-  fecha: {
-    type: _sequelize["default"].TEXT
-  },
-  hora: {
-    type: _sequelize["default"].TEXT
   },
   idpaciente: {
     type: _sequelize["default"].TEXT
   },
-  doctor: {
+  alergias: {
     type: _sequelize["default"].TEXT
   },
-  especialidad: {
+  enferpade: {
     type: _sequelize["default"].TEXT
   }
 }, {
-  tableName: 'proxcita',
+  tableName: 'expediente',
   timestamps: false
 });
 
-var _default = proximact;
+var _default = expediente;
 exports["default"] = _default;

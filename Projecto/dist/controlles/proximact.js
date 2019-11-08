@@ -32,7 +32,7 @@ function _getproximact() {
           case 0:
             _context.next = 2;
             return _proximact["default"].findAll({
-              attributes: ['idproximact', 'idconsulta', 'fecha']
+              attributes: ['idproximact', 'fecha', 'hora', 'idpaciente', 'doctor', 'especialidad']
             });
 
           case 2:
@@ -68,11 +68,10 @@ function _getproxwhere() {
           case 0:
             idproximact = req.params.idproximact;
             _context2.next = 3;
-            return _proximact["default"].findOne({
+            return _proximact["default"].findAll({
               where: {
                 idproximact: idproximact
-              },
-              attributes: ['idproximact', 'idconsulta', 'fecha']
+              }
             });
 
           case 3:
@@ -142,21 +141,24 @@ function _crearprox() {
   _crearprox = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee4(req, res) {
-    var _req$body, idproximact, idconsulta, fecha, prox;
+    var _req$body, idproximact, fecha, hora, idpaciente, doctor, especialidad, prox;
 
     return regeneratorRuntime.wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
-            _req$body = req.body, idproximact = _req$body.idproximact, idconsulta = _req$body.idconsulta, fecha = _req$body.fecha;
+            _req$body = req.body, idproximact = _req$body.idproximact, fecha = _req$body.fecha, hora = _req$body.hora, idpaciente = _req$body.idpaciente, doctor = _req$body.doctor, especialidad = _req$body.especialidad;
             _context4.prev = 1;
             _context4.next = 4;
             return _proximact["default"].create({
               idproximact: idproximact,
-              idconsulta: idconsulta,
-              fecha: fecha
+              fecha: fecha,
+              hora: hora,
+              idpaciente: idpaciente,
+              doctor: doctor,
+              especialidad: especialidad
             }, {
-              fields: ['idproximact', 'idconsulta', 'fecha']
+              fields: ['idproximact', 'fecha', 'hora', 'idpaciente', 'doctor', 'especialidad']
             });
 
           case 4:
@@ -205,16 +207,17 @@ function _updateprox() {
   _updateprox = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee6(req, res) {
-    var idproximact, fecha, prox3;
+    var idproximact, _req$body2, fecha, hora, idpaciente, doctor, especialidad, prox3;
+
     return regeneratorRuntime.wrap(function _callee6$(_context6) {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
             idproximact = req.params.idproximact;
-            fecha = req.body.fecha;
+            _req$body2 = req.body, fecha = _req$body2.fecha, hora = _req$body2.hora, idpaciente = _req$body2.idpaciente, doctor = _req$body2.doctor, especialidad = _req$body2.especialidad;
             _context6.next = 4;
             return _proximact["default"].findAll({
-              attributes: ['idproximact', 'idconsulta', 'fecha'],
+              attributes: ['fecha', 'hora', 'idpaciente', 'doctor', 'especialidad'],
               where: {
                 idproximact: idproximact
               }
@@ -236,7 +239,11 @@ function _updateprox() {
                         case 0:
                           _context5.next = 2;
                           return prox3.update({
-                            fecha: fecha
+                            fecha: fecha,
+                            hora: hora,
+                            idpaciente: idpaciente,
+                            doctor: doctor,
+                            especialidad: especialidad
                           });
 
                         case 2:

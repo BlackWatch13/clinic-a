@@ -28,27 +28,27 @@ function _crearhoja() {
   _crearhoja = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee(req, res) {
-    var _req$body, idconsulta, idpaciente, iddoctor, fecha, motivo_consulta, peso, evaluacion, examenes_slt, prescripcion_fc, newhoja;
+    var _req$body, idconsulta, fecha, hora, motivo_consulta, peso, evaluacion, examenes_slt, idexpe, iduser, newhoja;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _req$body = req.body, idconsulta = _req$body.idconsulta, idpaciente = _req$body.idpaciente, iddoctor = _req$body.iddoctor, fecha = _req$body.fecha, motivo_consulta = _req$body.motivo_consulta, peso = _req$body.peso, evaluacion = _req$body.evaluacion, examenes_slt = _req$body.examenes_slt, prescripcion_fc = _req$body.prescripcion_fc;
+            _req$body = req.body, idconsulta = _req$body.idconsulta, fecha = _req$body.fecha, hora = _req$body.hora, motivo_consulta = _req$body.motivo_consulta, peso = _req$body.peso, evaluacion = _req$body.evaluacion, examenes_slt = _req$body.examenes_slt, idexpe = _req$body.idexpe, iduser = _req$body.iduser;
             _context.prev = 1;
             _context.next = 4;
             return _consulta_hojaclinica["default"].create({
               idconsulta: idconsulta,
-              idpaciente: idpaciente,
-              iddoctor: iddoctor,
               fecha: fecha,
+              hora: hora,
               motivo_consulta: motivo_consulta,
               peso: peso,
               evaluacion: evaluacion,
               examenes_slt: examenes_slt,
-              prescripcion_fc: prescripcion_fc
+              idexpe: idexpe,
+              iduser: iduser
             }, {
-              fields: ['idconsulta', 'idpaciente', 'iddoctor', 'fecha', 'motivo_consulta', 'peso', 'evaluacion', 'examenes_slt', 'prescripcion_fc']
+              fields: ['idconsulta', 'fecha', 'hora', 'motivo_consulta', 'peso', 'evaluacion', 'examenes_slt', 'idexpe', 'iduser']
             });
 
           case 4:
@@ -60,7 +60,7 @@ function _crearhoja() {
             }
 
             return _context.abrupt("return", res.json({
-              mesage: "Insert successful into consulta_hojaclinica",
+              mesage: "Insert successful into hoja_clinica",
               data: newhoja
             }));
 
@@ -104,7 +104,7 @@ function _gethoja() {
           case 0:
             _context2.next = 2;
             return _consulta_hojaclinica["default"].findAll({
-              atributes: ['idconsulta', 'idpaciente', 'iddoctor', 'fecha', 'motivo_consulta', 'peso', 'evaluacion', 'examenes_slt', 'prescripcion_fc']
+              atributes: ['idconsulta', 'fecha', 'hora', 'motivo_consulta', 'peso', 'evaluacion', 'examenes_slt', 'idexpe', 'iduser']
             });
 
           case 2:
@@ -140,7 +140,7 @@ function _gethojawhere() {
           case 0:
             idconsulta = req.params.idconsulta;
             _context3.next = 3;
-            return _consulta_hojaclinica["default"].findOne({
+            return _consulta_hojaclinica["default"].findAll({
               were: {
                 idconsulta: idconsulta
               },
@@ -213,17 +213,17 @@ function _update() {
   _update = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee6(req, res) {
-    var idconsulta, _req$body2, idpaciente, iddoctor, fecha, motivo_consulta, peso, evaluacion, examenes_slt, prescripcion_fc, hoja;
+    var idconsulta, _req$body2, fecha, hora, motivo_consulta, peso, evaluacion, examenes_slt, idexpe, iduser, hoja;
 
     return regeneratorRuntime.wrap(function _callee6$(_context6) {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
             idconsulta = req.params.idconsulta;
-            _req$body2 = req.body, idpaciente = _req$body2.idpaciente, iddoctor = _req$body2.iddoctor, fecha = _req$body2.fecha, motivo_consulta = _req$body2.motivo_consulta, peso = _req$body2.peso, evaluacion = _req$body2.evaluacion, examenes_slt = _req$body2.examenes_slt, prescripcion_fc = _req$body2.prescripcion_fc;
+            _req$body2 = req.body, fecha = _req$body2.fecha, hora = _req$body2.hora, motivo_consulta = _req$body2.motivo_consulta, peso = _req$body2.peso, evaluacion = _req$body2.evaluacion, examenes_slt = _req$body2.examenes_slt, idexpe = _req$body2.idexpe, iduser = _req$body2.iduser;
             _context6.next = 4;
             return _consulta_hojaclinica["default"].findAll({
-              attributes: ['idconsulta', 'idpaciente', 'iddoctor', 'fecha', 'motivo_consulta', 'peso', 'evaluacion', 'examenes_slt', 'prescripcion_fc'],
+              attributes: ['fecha', 'hora', 'motivo_consulta', 'peso', 'evaluacion', 'examenes_slt', 'idexpe', 'iduser'],
               where: {
                 idconsulta: idconsulta
               }
@@ -245,14 +245,14 @@ function _update() {
                         case 0:
                           _context5.next = 2;
                           return hoja.update({
-                            idpaciente: idpaciente,
-                            iddoctor: iddoctor,
                             fecha: fecha,
+                            hora: hora,
                             motivo_consulta: motivo_consulta,
                             peso: peso,
                             evaluacion: evaluacion,
                             examenes_slt: examenes_slt,
-                            prescripcion_fc: prescripcion_fc
+                            idexpe: idexpe,
+                            iduser: iduser
                           });
 
                         case 2:
