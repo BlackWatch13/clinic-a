@@ -15,14 +15,14 @@ const user =sequelize.define('user',{
     estado:{
         type: Sequelize.INTEGER
     },
-    especialidad:{
+    pass:{
         type: Sequelize.TEXT
     },
     pass:{
         type: Sequelize.TEXT
     }
 },{
-    tableName: 'user',
+    tableName: 'usuarios',
     timestamps: false
 })
 
