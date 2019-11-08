@@ -20,7 +20,6 @@
 
 <?php
 
-<<<<<<< HEAD
 $ruta = $_GET["ruta"];
 
 $curl = curl_init();
@@ -39,32 +38,15 @@ curl_setopt_array($curl, array(
     "content-type: application/json"
   ),
 ));
-=======
-        $url = "http://localhost:3000/api/".$ruta;
-        $json = file_get_contents($url);
-        $datos = json_decode($json, true);
-        $data = $datos["data"];
-        //var_dump($nombre);
-        foreach($data as $datos)
-        {
-          var_dump($datos);
-        }
-    }
->>>>>>> 940d96416abf92b0398d0b4768e351bec190cb4f
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
 curl_close($curl);
 
-<<<<<<< HEAD
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
   echo $response;
   echo $ruta;
 } ?>
-=======
-
-?>
->>>>>>> 940d96416abf92b0398d0b4768e351bec190cb4f

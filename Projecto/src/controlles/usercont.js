@@ -2,11 +2,7 @@ import user from '../model/user';
 
 
 export async function getuser(req, res){
-<<<<<<< HEAD
     const users = await user.findAll({attributes:['iduser','nombre','apellido','estado','especialidad','pass']});
-=======
-    const users = await user.findAll({attributes:['iduser','nombre','apellido','estado','pass']});
->>>>>>> 940d96416abf92b0398d0b4768e351bec190cb4f
     res.json({
         data: users
     });
@@ -37,13 +33,8 @@ export async function deleteuser(req, res){
 
 export async function updateuser(req, res){
     const {iduser} = req.params;
-<<<<<<< HEAD
     const {nombre, apellido, estado,especialidad, pass} = req.body;
     const user3 = await user.findAll({attributes:['iduser','nombre','apellido','estado','especialidad','pass'],
-=======
-    const {nombre, apellido, estado,especialidad} = req.body;
-    const user3 = await user.findAll({attributes:['iduser','nombre','apellido','estado','pass'],
->>>>>>> 940d96416abf92b0398d0b4768e351bec190cb4f
         where:{
              iduser
         }
@@ -77,11 +68,7 @@ export async function crearuser(req, res) {
             especialidad,
             pass
         },{
-<<<<<<< HEAD
             fields: ['iduser','nombre','apellido','estado','especialidad','pass']
-=======
-            fields: ['iduser','nombre','apellido','estado','pass']
->>>>>>> 940d96416abf92b0398d0b4768e351bec190cb4f
         });
         if (newuser) {
            return res.json({
@@ -94,7 +81,6 @@ export async function crearuser(req, res) {
       res.status(500).json({message:'Error' ,data:{} })
     }
 };
-<<<<<<< HEAD
 
 
 // Saber cuantos son X rol where Estado = X
@@ -112,10 +98,3 @@ export async function getuserestado(req , res) {
     });
   res.json({data: user1})
   };
-  
-
-
-
-
-=======
->>>>>>> 940d96416abf92b0398d0b4768e351bec190cb4f
