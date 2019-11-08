@@ -46,11 +46,11 @@
             </nav>
 <div class="container-fluid" style="margin-top:80px">
 
-<div class="d-flex p-3 col-example" style="width:80%; float:left;">	
-                <div class="card" style="width:325px;   ">	
-                <div class="card-header">Añadir nueva cita </div>	
-                <div class="card-body text-center"> <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm"><i class="fas fa-plus fa-6x"></i></a></div>	
-                <div class="card-footer"></div>	
+<div class="d-flex p-3 col-example" style="width:80%; float:left;">
+                <div class="card" style="width:325px;   ">
+                <div class="card-header">Añadir nueva cita </div>
+                <div class="card-body text-center"> <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm"><i class="fas fa-plus fa-6x"></i></a></div>
+                <div class="card-footer"></div>
 </div>
 
      <!-- INSERTAR CONTENIDOS -->
@@ -68,13 +68,13 @@
         <div class="md-form mb-5">
           <i class="far fa-calendar-alt prefix grey-text"></i>
           <input name="fecha" type="date" id="defaultForm-email" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-email">Ingresar fecha</label>
+          <label data-error="wrong" data-success="right" for="defaultForm-email"></label>
         </div>
 
         <div class="md-form mb-5">
           <i class="far fa-clock prefix grey-text"></i>
           <input name="hora" type="time" id="defaultForm-email" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-email">Ingresar Hora</label>
+          <label data-error="wrong" data-success="right" for="defaultForm-email"></label>
         </div>
 
         <div class="md-form mb-5">

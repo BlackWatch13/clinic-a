@@ -22,7 +22,7 @@ const user =sequelize.define('user',{
         type: Sequelize.TEXT
     }
 },{
-    tableName: 'usuarios',
+    tableName: 'user',
     timestamps: false
 })
 

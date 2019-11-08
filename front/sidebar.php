@@ -16,10 +16,10 @@
                     <a href="registrop.php" ><i class="fas fa-address-card mr-3"></i>Nuevo paciente</a>
                 </li>
                 <li>
-                    <a href="recetas.php" ><i class="fas fa-edit mr-3"></i>Recetas</a>
+                    <a href="recetasp.php" ><i class="fas fa-edit mr-3"></i>Recetas</a>
                 </li>
                 <li>
-                    <a href="expedientes.php" ><i class="fas fa-archive mr-3 ""></i>Expedientes</a>
+                    <a href="expedientes.php" ><i class="fas fa-archive mr-3 "></i>Expedientes</a>
                 </li>
                 <li>
                     <a href="cusuarios.php" ><i class="fas fa-street-view mr-3"></i>Usuarios</a>
@@ -34,6 +34,6 @@
                    <li>
                     <a href="#" class="download">Cerrar Sesion</a>
                 </li>
-               
+
             </ul>
         </nav>

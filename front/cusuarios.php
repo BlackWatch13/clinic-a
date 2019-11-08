@@ -86,7 +86,7 @@
         <!--Table head-->
         <thead>
           <tr>
-            
+
             <th class="th-lg">
               <a>Username
                 <i class="fas fa-sort ml-1"></i>
@@ -120,19 +120,42 @@
           </tr>
         </thead>
         <!--Table head-->
+        <?php
+        $url = "http://localhost:3000/api/user";
+        $json = file_get_contents($url);
+        $datos = json_decode($json, true);
+        $data = $datos["data"];
 
+        foreach($data as $datos)
+        {
+          echo "<tr>";
+
+          foreach($datos as $info)
+          {
+            echo "<td>";
+            if($info=='1'){
+              echo("admin");
+            }
+              else if($info=='2'){
+                echo("recepcionista");
+              }
+                else if($info=='3'){
+                  echo("doctor");
+                }
+                else{
+                  echo($info);
+                }
+            echo("</td>");
+          }
+          echo "</tr>";
+        }
+        ?>
         <!--Table body-->
         <tbody>
           <tr>
-            
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-         
+
+
+
         </tbody>
         <!--Table body-->
       </table>
@@ -178,7 +201,7 @@
             });
         });
 
-       
+
   $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
   $('#textAreaEditor').editableTableWidget({editor: $('<textarea>')});
   window.prettyPrint && prettyPrint();

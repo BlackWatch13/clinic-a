@@ -54,51 +54,49 @@
 						<h4>Informacion del Paciente </h4>
 					</div>
 					<div class="card-body">
-						<form class="form" role="form" autocomplete="off">
+						<form class="form" role="form" autocomplete="off" method="post">
 							<div class="form-group row">
-								<label class="col-lg-3 col-form-label form-control-label">Medicamento</label>
+								<label class="col-lg-3 col-form-label form-control-label">Username</label>
 								<div class="col-lg-9">
-									<input name="medicamento" class="form-control" type="text" placeholder="Ingrese Medicamento">
+									<input name="username" class="form-control" type="text" placeholder="Ingrese nombre de usuario">
 								</div>
+              </div>
+                <div class="form-group row">
+  								<label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+  								<div class="col-lg-9">
+  									<input name="nombre" class="form-control" type="text" placeholder="Ingrese nombre">
+  								</div>
 							</div>
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Apellidos</label>
 								<div class="col-lg-9">
-									<input name="apellido" class="form-control" type="text" placeholder="Ingrese Paciente">
+									<input name="apellido" class="form-control" type="text" placeholder="Ingrese Apellido">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Especialidad</label>
+								<div class="col-lg-9">
+									<input name="especialidad" class="form-control" type="text" placeholder="Unicamente para doctores">
+								</div>
+
+                            </div>
+
+                            <div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Rol</label>
+								<div class="col-lg-9">
+                                <select name="estado" class="browser-default custom-select">
+                                <option selected>Seleccione</option>
+                                <option value="1">Administrador</option>
+                                <option value="2">Recepcionista</option>
+                                <option value="3">Doctor</option>
+                                </select>
 								</div>
 							</div>
 
 							<div class="form-group row">
-								<label class="col-lg-3 col-form-label form-control-label">Edad</label>
-								<div class="col-lg-9">
-									<input name="edad" type="number" class="form-control" type="text" placeholder="XX">
-								</div>
-                            </div>
-
-                            <div class="form-group row">
-								<label class="col-lg-3 col-form-label form-control-label">Sexo</label>
-								<div class="col-lg-9">
-                                <select name="sexo" class="browser-default custom-select">
-                                <option selected>Seleccione</option>
-                                <option value="1">Hombre</option>
-                                <option value="2">Mujer</option>
-                                </select>
-								</div>
-                            </div>
-
-							<div class="form-group row">
-								<label class="col-lg-3 col-form-label form-control-label">Direcion</label>
-								<div class="col-lg-9">
-									<input name="direccion" class="form-control" type="text" placeholder="Ingrese Direccion">
-								</div>
-                            </div>
-
-
-
-							<div class="form-group row">
 								<div class="col-lg-12 text-center">
 									<input type="reset" class="btn btn-secondary" value="Cancelar">
-									<input type="button" class="btn btn-primary"
+									<input type="submit" class="btn btn-primary"
 										value="Guardar">
 								</div>
 							</div>
@@ -106,6 +104,44 @@
 					</div>
 				</div>
 				<!-- FIN CONTENIDO-->
+
+                <?php
+if (isset($_POST["nombre"]))
+{
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST["apellido"];
+    $telefono = $_POST["telefono"];
+    $edad = $_POST["edad"];
+    $direccion = $_POST["direccion"];
+    $sexo = $_POST["sexo"];
+
+     $url = "http://localhost:3000/api/user";
+     $data = array(
+        'idpaciente' => $nombre.$telefono,
+        'nombre'=> $nombre,
+        'apellido' => $apellido,
+        'telefono' => $telefono,
+        'edad' => $edad,
+        'direccion' => $direccion,
+        'sexo' => $sexo
+
+    );
+    $payload = json_encode($data);
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_HEADER, false);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER,
+        array("Content-type: application/json"));
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
+    $json_response = curl_exec($curl);
+    $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    curl_close($curl);
+
+}
+?>
+
+
 
 </div>
         </div>
