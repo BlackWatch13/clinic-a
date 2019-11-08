@@ -4,7 +4,7 @@
 
 
     <!--Copyright-->
-    <div class="footer-copyright py-3">
+    <div class="footer-copyright" >
       © 2019 Copyright:
       <a href="" target="_blank"> BlackWatch </a>
     </div>

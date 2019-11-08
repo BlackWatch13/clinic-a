@@ -29,7 +29,7 @@
     ?>
       </div>
         <!-- Page Content  -->
-        <div id="content" style="border-bottom-width: 28px;border-bottom-style: solid;">
+        <div id="content" style="border-bottom-width: 10px;border-bottom-style: solid;">
 
             <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                 <div class="container-fluid col-2">

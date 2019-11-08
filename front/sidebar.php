@@ -1,9 +1,7 @@
-<nav id="sidebar">
-            <!--div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
-            </div-->
+<nav id="sidebar" class="custom-scrollbar">
 
-            <ul class="list-unstyled components">
+
+            <ul class="list-unstyled components ">
                 <p>HEADER</p>
                 <!-- li class=""-->
                 <li>

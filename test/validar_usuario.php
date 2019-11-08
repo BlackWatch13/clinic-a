@@ -28,7 +28,7 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
    $_SESSION["k_username"] = $row['iduser'];
    if($row["estado"]== 1){
        //mandalo a la pantallas de admon
-            header('location:../front/Cdoctores.php');
+            header('location:../front/index.php');
 
             $_SESSION['log_in'] = true;
             $_SESSION['rol'] = "admin";
