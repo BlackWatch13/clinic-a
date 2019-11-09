@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    //
+    $.post("pruebapeticion.php",
+    {
+      ruta: $('#ruta').val()
+    },
+    function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<input type="text" id="ruta" value="">
+
+<button>Obtener ruta</button>
+
+</body>
+</html>

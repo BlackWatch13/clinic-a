@@ -62,17 +62,10 @@
 
     <a href="" class="white-text mx-4">Table name</a>
 
-    <!-- div>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="fas fa-pencil-alt mt-0"></i>
-      </button>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="far fa-trash-alt mt-0"></i>
-      </button>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="fas fa-info-circle mt-0"></i>
-      </button>
-    </div-->
+
+    <div>
+      <input id="myInput" type="text" placeholder="Buscar..">
+    </div>
 
   </div>
   <!--/Card image-->
@@ -117,10 +110,16 @@
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
+            <th class="th-lg">
+              Editar/Eliminar
+
+            </th>
           </tr>
         </thead>
         <!--Table head-->
+            <tbody id="myTable">
         <?php
+        $i = 1;
         $url = "http://localhost:3000/api/user";
         $json = file_get_contents($url);
         $datos = json_decode($json, true);
@@ -132,7 +131,7 @@
 
           foreach($datos as $info)
           {
-            echo "<td>";
+            echo '<td class="'.$i.'">';
             if($info=='1'){
               echo("admin");
             }
@@ -146,13 +145,23 @@
                   echo($info);
                 }
             echo("</td>");
+            $i++;
           }
-          echo "</tr>";
+
+          echo '<td>
+          <button type="button" class="btn  btn-sm px-2">
+            <i class="far fa-edit mt-0"></i>
+          </button>
+          <button type="button" class="btn btn-sm px-2" id="borrar">
+            <i class="fas fa-times mt-0"></i>
+          </button>
+          </td>
+          </tr>';
         }
         ?>
         <!--Table body-->
-        <tbody>
-          <tr>
+
+
 
 
 
@@ -179,7 +188,7 @@
     include 'footer.php';
     ?>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
@@ -187,6 +196,7 @@
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="./js/mindmup-editabletable.js"></script>
+
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -199,12 +209,38 @@
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
+
+
+
+
+
+            $('#borrar').click(function(){
+              //Busca el boton borrar, obtiene el dato en username en esa fila
+              //le envia "username" al archivo php y lo imprime en un alert...
+              var $row = $(this).closest("tr");    // Find the row
+              var $text = $row.find(".1").text(); // Find the text
+              $.post("../test/pruebaenvio.php",
+              {
+                username: $text
+              },
+              function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+                });
+             });
+
+
         });
 
 
-  $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
-  $('#textAreaEditor').editableTableWidget({editor: $('<textarea>')});
-  window.prettyPrint && prettyPrint();
+
+
+  /*$('#borrar').onClick(function() {
+      var $row = $(this).closest("tr");    // Find the row
+      var $text = $row.find(".nr").text(); // Find the text
+
+      // Let's test it out
+      alert($text);
+  });*/
 
     </script>
 </body>
