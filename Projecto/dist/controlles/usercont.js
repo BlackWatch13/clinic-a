@@ -8,8 +8,6 @@ exports.getuserwhere = getuserwhere;
 exports.deleteuser = deleteuser;
 exports.updateuser = updateuser;
 exports.crearuser = crearuser;
-exports.getuserestado = getuserestado;
-exports.getuserespe = getuserespe;
 
 var _user = _interopRequireDefault(require("../model/user"));
 
@@ -34,7 +32,7 @@ function _getuser() {
           case 0:
             _context.next = 2;
             return _user["default"].findAll({
-              attributes: ['iduser', 'nombre', 'apellido', 'estado', 'especialidad', 'pass']
+              attributes: ['iduser', 'nombre', 'apellido', 'estado', 'especialidad']
             });
 
           case 2:
@@ -142,17 +140,17 @@ function _updateuser() {
   _updateuser = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee5(req, res) {
-    var iduser, _req$body, nombre, apellido, estado, especialidad, pass, user3;
+    var iduser, _req$body, nombre, apellido, estado, especialidad, user3;
 
     return regeneratorRuntime.wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
             iduser = req.params.iduser;
-            _req$body = req.body, nombre = _req$body.nombre, apellido = _req$body.apellido, estado = _req$body.estado, especialidad = _req$body.especialidad, pass = _req$body.pass;
+            _req$body = req.body, nombre = _req$body.nombre, apellido = _req$body.apellido, estado = _req$body.estado, especialidad = _req$body.especialidad;
             _context5.next = 4;
             return _user["default"].findAll({
-              attributes: ['iduser', 'nombre', 'apellido', 'estado', 'especialidad', 'pass'],
+              attributes: ['iduser', 'nombre', 'apellido', 'estado', 'especialidad'],
               where: {
                 iduser: iduser
               }
@@ -177,8 +175,7 @@ function _updateuser() {
                             nombre: nombre,
                             apellido: apellido,
                             estado: estado,
-                            especialidad: especialidad,
-                            pass: pass
+                            especialidad: especialidad
                           });
 
                         case 2:
@@ -189,7 +186,7 @@ function _updateuser() {
                   }, _callee4);
                 }));
 
-                return function (_x15) {
+                return function (_x11) {
                   return _ref.apply(this, arguments);
                 };
               }());
@@ -220,13 +217,13 @@ function _crearuser() {
   _crearuser = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee6(req, res) {
-    var _req$body2, iduser, nombre, apellido, estado, especialidad, pass, newuser;
+    var _req$body2, iduser, nombre, apellido, estado, especialidad, newuser;
 
     return regeneratorRuntime.wrap(function _callee6$(_context6) {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
-            _req$body2 = req.body, iduser = _req$body2.iduser, nombre = _req$body2.nombre, apellido = _req$body2.apellido, estado = _req$body2.estado, especialidad = _req$body2.especialidad, pass = _req$body2.pass;
+            _req$body2 = req.body, iduser = _req$body2.iduser, nombre = _req$body2.nombre, apellido = _req$body2.apellido, estado = _req$body2.estado, especialidad = _req$body2.especialidad;
             _context6.prev = 1;
             _context6.next = 4;
             return _user["default"].create({
@@ -234,10 +231,9 @@ function _crearuser() {
               nombre: nombre,
               apellido: apellido,
               estado: estado,
-              especialidad: especialidad,
-              pass: pass
+              especialidad: especialidad
             }, {
-              fields: ['iduser', 'nombre', 'apellido', 'estado', 'especialidad', 'pass']
+              fields: ['iduser', 'nombre', 'apellido', 'estado', 'especialidad']
             });
 
           case 4:
@@ -274,84 +270,6 @@ function _crearuser() {
     }, _callee6, null, [[1, 9]]);
   }));
   return _crearuser.apply(this, arguments);
-}
-
-; // Saber cuantos son X rol where Estado = X
-
-function getuserestado(_x11, _x12) {
-  return _getuserestado.apply(this, arguments);
-}
-
-function _getuserestado() {
-  _getuserestado = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee7(req, res) {
-    var estado, user1;
-    return regeneratorRuntime.wrap(function _callee7$(_context7) {
-      while (1) {
-        switch (_context7.prev = _context7.next) {
-          case 0:
-            estado = req.params.estado;
-            _context7.next = 3;
-            return _user["default"].findAll({
-              where: {
-                estado: estado
-              }
-            });
-
-          case 3:
-            user1 = _context7.sent;
-            res.json({
-              data: user1
-            });
-
-          case 5:
-          case "end":
-            return _context7.stop();
-        }
-      }
-    }, _callee7);
-  }));
-  return _getuserestado.apply(this, arguments);
-}
-
-;
-
-function getuserespe(_x13, _x14) {
-  return _getuserespe.apply(this, arguments);
-}
-
-function _getuserespe() {
-  _getuserespe = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee8(req, res) {
-    var especialidad, user1;
-    return regeneratorRuntime.wrap(function _callee8$(_context8) {
-      while (1) {
-        switch (_context8.prev = _context8.next) {
-          case 0:
-            especialidad = req.params.especialidad;
-            _context8.next = 3;
-            return _user["default"].findAll({
-              where: {
-                especialidad: especialidad
-              }
-            });
-
-          case 3:
-            user1 = _context8.sent;
-            res.json({
-              data: user1
-            });
-
-          case 5:
-          case "end":
-            return _context8.stop();
-        }
-      }
-    }, _callee8);
-  }));
-  return _getuserespe.apply(this, arguments);
 }
 
 ;

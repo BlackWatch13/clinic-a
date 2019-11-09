@@ -15,7 +15,7 @@ const user =sequelize.define('user',{
     estado:{
         type: Sequelize.INTEGER
     },
-    pass:{
+    especialidad:{
         type: Sequelize.TEXT
     },
     pass:{

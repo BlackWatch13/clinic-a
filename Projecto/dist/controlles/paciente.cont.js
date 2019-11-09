@@ -8,7 +8,6 @@ exports.crearpaciente = crearpaciente;
 exports.getpacientewhere = getpacientewhere;
 exports.deletepacientewhere = deletepacientewhere;
 exports.updatepacientewhere = updatepacientewhere;
-exports.getpacientewheresexo = getpacientewheresexo;
 
 var _paciente = _interopRequireDefault(require("../model/paciente"));
 
@@ -202,8 +201,7 @@ function _deletepacientewhere() {
 
 function updatepacientewhere(_x9, _x10) {
   return _updatepacientewhere.apply(this, arguments);
-} //reportes
-
+}
 
 function _updatepacientewhere() {
   _updatepacientewhere = _asyncToGenerator(
@@ -257,7 +255,7 @@ function _updatepacientewhere() {
                   }, _callee5);
                 }));
 
-                return function (_x13) {
+                return function (_x11) {
                   return _ref.apply(this, arguments);
                 };
               }());
@@ -277,42 +275,3 @@ function _updatepacientewhere() {
   }));
   return _updatepacientewhere.apply(this, arguments);
 }
-
-function getpacientewheresexo(_x11, _x12) {
-  return _getpacientewheresexo.apply(this, arguments);
-}
-
-function _getpacientewheresexo() {
-  _getpacientewheresexo = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee7(req, res) {
-    var sexo, paciente1;
-    return regeneratorRuntime.wrap(function _callee7$(_context7) {
-      while (1) {
-        switch (_context7.prev = _context7.next) {
-          case 0:
-            sexo = req.params.sexo;
-            _context7.next = 3;
-            return _paciente["default"].findAll({
-              where: {
-                sexo: sexo
-              }
-            });
-
-          case 3:
-            paciente1 = _context7.sent;
-            res.json({
-              data: paciente1
-            });
-
-          case 5:
-          case "end":
-            return _context7.stop();
-        }
-      }
-    }, _callee7);
-  }));
-  return _getpacientewheresexo.apply(this, arguments);
-}
-
-;

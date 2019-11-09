@@ -73,3 +73,17 @@ export async function updateprox(req, res){
    })
 
 };
+
+//Reportes
+
+
+export async function getproxwheredr(req, res){
+    const {doctor}= req.params;
+    const prox = await proximact.findAll({where:{doctor:doctor}})
+    res.json(
+        {
+            message: 'Valores solicitados',
+            dat: prox
+        }
+    )
+};

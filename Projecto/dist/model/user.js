@@ -27,9 +27,6 @@ var user = _db.sequelize.define('user', {
   },
   especialidad: {
     type: _sequelize["default"].TEXT
-  },
-  pass: {
-    type: _sequelize["default"].TEXT
   }
 }, {
   tableName: 'user',

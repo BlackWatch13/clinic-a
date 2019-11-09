@@ -149,10 +149,10 @@
           }
 
           echo '<td>
-          <button type="button" class="btn  btn-sm px-2" id="editar">
+          <button type="button" class="btn  btn-sm px-2 editar">
             <i class="far fa-edit mt-0"></i>
           </button>
-          <button type="button" class="btn btn-sm px-2" id="borrar">
+          <button type="button" class="btn btn-sm px-2 borrar">
             <i class="fas fa-times mt-0"></i>
           </button>
           </td>
@@ -190,25 +190,25 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <i class="far fa-calendar-alt prefix grey-text"></i>
-          <input name="username" type="text" id="editformusername" class="form-control validate">
+          <input name="username" type="text" id="editform1" class="form-control validate">
         </div>
 
         <div class="md-form mb-5">
           <i class="far fa-clock prefix grey-text"></i>
-          <input name="nombre" type="text" id="editformname" class="form-control validate">
+          <input name="nombre" type="text" id="editform2" class="form-control validate">
 
         </div>
 
         <div class="md-form mb-5">
           <i class="fas fa-user-injured prefix grey-text"></i>
-          <input name="apellido" type="text" id="editformsurname" class="form-control validate">
+          <input name="apellido" type="text" id="editform3" class="form-control validate">
 
         </div>
 
 
         <div class="md-form mb-5">
 
-          <select name="estado" id="editformstate" class="browser-default custom-select" >
+          <select name="estado" id="editform4" class="browser-default custom-select" >
           <option selected>Elegir tipo de usuario</option>
           <option value="1">Administrador</option>
           <option value="2">Recepcionista</option>
@@ -220,7 +220,7 @@
 
         <div class="md-form mb-5">
           <i class="fas fa-certificate prefix grey-text"></i>
-          <input name="especialidad" type="text" id="editformesp" class="form-control validate" >
+          <input name="especialidad" type="text" id="editform5" class="form-control validate" >
 
         </div>
 
@@ -228,13 +228,13 @@
 
         <div class="md-form mb-5">
           <i class="fas fa-certificate prefix grey-text"></i>
-          <input name="contraseña" type="password" id="editformpass" class="form-control validate" placeholder="Especialidad">
+          <input name="contraseña" type="password" id="editform6" class="form-control validate" placeholder="Especialidad">
 
         </div>
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-default" id="modificar">Guardar</button>
+        <button class="btn btn-default modificar">Guardar</button>
       </div>
      </div>
      </div>
@@ -257,6 +257,7 @@
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="./js/mindmup-editabletable.js"></script>
+    <script src="./js/crud.js"></script>
 
 
     <script type="text/javascript">
@@ -270,58 +271,7 @@
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
-
-
-            $('#editar').click(function(){
-              var $row = $(this).closest("tr");
-              var $text = $row.find(".4").text();
-              if($text=="admin")
-              {
-                $("#editformstate").val('1');
-              }
-              else if ($text=="recepcionista") {
-                $("#editformstate").val('2');
-              }
-              else if ($text=="doctor") {
-                $("#editformstate").val('3');
-              }
-              document.getElementById("editformusername").value = $row.find(".1").text();
-              document.getElementById("editformname").value = $row.find(".2").text();
-              document.getElementById("editformsurname").value = $row.find(".3").text();
-              document.getElementById("editformesp").value = $row.find(".5").text();
-              document.getElementById("editformpass").value = $row.find(".6").text();
-
-              $('#modalLoginForm').modal('show');
-             });
-
-
-            $('#borrar').click(function(){
-              //Busca el boton borrar, obtiene el dato en username en esa fila
-              //le envia "username" al archivo php y lo imprime en un alert...
-              var $row = $(this).closest("tr");    // Find the row
-              var $text = $row.find(".1").text(); // Find the text
-              $.post("../test/pruebaenvio.php",
-              {
-                username: $text
-              },
-              function(data, status){
-                alert("Data: " + data + "\nStatus: " + status);
-                });
-             });
-
-
         });
-
-
-
-
-  /*$('#borrar').onClick(function() {
-      var $row = $(this).closest("tr");    // Find the row
-      var $text = $row.find(".nr").text(); // Find the text
-
-      // Let's test it out
-      alert($text);
-  });*/
 
     </script>
 </body>

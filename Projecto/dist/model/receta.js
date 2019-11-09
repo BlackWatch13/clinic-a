@@ -19,9 +19,6 @@ var receta = _db.sequelize.define('receta', {
   medicamento: {
     type: _sequelize["default"].TEXT
   },
-  nombdr: {
-    type: _sequelize["default"].TEXT
-  },
   nombpac: {
     type: _sequelize["default"].TEXT
   },

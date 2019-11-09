@@ -98,3 +98,8 @@ export async function getuserestado(req , res) {
     });
   res.json({data: user1})
   };
+  
+
+
+
+
