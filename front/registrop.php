@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Citas</title>
+    <title>Registro de Pacientes</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -41,7 +41,7 @@
 
                 </div>
                 <div class="container-fluid col-7">
-                   <h2 class="tituloHeader"> Citas Proximas </h2>
+                   <h2 class="tituloHeader"> Nuevo Registro </h2>
                 </div>
             </nav>
 <div class="container-fluid" style="margin-top:60px">
@@ -76,7 +76,7 @@
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Edad</label>
 								<div class="col-lg-9">
-									<input name="edad" type="number" class="form-control" type="text" placeholder="XX">
+									<input name="edad" type="number" class="form-control" type="text" placeholder="XX" min="0" max="100">
 								</div>
 							</div>
 							<div class="form-group row">
@@ -91,8 +91,8 @@
 								<div class="col-lg-9">
                                 <select name="sexo" class="browser-default custom-select">
                                 <option selected>Seleccione</option>
-                                <option value="1">Hombre</option>
-                                <option value="2">Mujer</option>
+                                <option value="Masculino">Hombre</option>
+                                <option value="Femenino">Mujer</option>
                                 </select>
 								</div>
 							</div>

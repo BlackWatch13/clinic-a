@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Citas</title>
+    <title>Recetas</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -41,7 +41,7 @@
 
                 </div>
                 <div class="container-fluid col-7">
-                   <h2 class="tituloHeader"> Citas Proximas </h2>
+                   <h2 class="tituloHeader"> Crear Receptas </h2>
                 </div>
             </nav>
 <div class="container-fluid" style="margin-top:60px">
@@ -51,7 +51,7 @@
 
 	 <div class="fondoForm  light-blue accent-1">
 					<div class="card-header">
-						<h4>Informacion del Paciente </h4>
+						<h4>Informacion</h4>
 					</div>
 					<div class="card-body">
 						<form class="form" role="form" autocomplete="off">
@@ -62,9 +62,9 @@
 								</div>
 							</div>
 							<div class="form-group row">
-								<label class="col-lg-3 col-form-label form-control-label">Apellidos</label>
+								<label class="col-lg-3 col-form-label form-control-label">Paciente</label>
 								<div class="col-lg-9">
-									<input name="apellido" class="form-control" type="text" placeholder="Ingrese Paciente">
+									<input name="paciente" class="form-control" type="text" placeholder="Ingrese Paciente">
 								</div>
 							</div>
 
@@ -87,12 +87,46 @@
                             </div>
 
 							<div class="form-group row">
-								<label class="col-lg-3 col-form-label form-control-label">Direcion</label>
+								<label class="col-lg-3 col-form-label form-control-label">Dosis</label>
 								<div class="col-lg-9">
-									<input name="direccion" class="form-control" type="text" placeholder="Ingrese Direccion">
+									<input name="dosis" class="form-control" type="text" placeholder="Ingrese dosis">
 								</div>
                             </div>
 
+                            <div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Presentacion</label>
+								<div class="col-lg-9">
+									<input name="formed" class="form-control" type="text" placeholder="Ingrese tipo de presentacion">
+								</div>
+                            </div>
+
+                            <div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Via de administracion</label>
+								<div class="col-lg-9">
+									<input name="viadmi" class="form-control" type="text" placeholder="Ingrese tipo de administracion">
+								</div>
+                            </div>
+
+                            <div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Cantidad</label>
+								<div class="col-lg-9">
+									<input name="cantpre" class="form-control" type="text" placeholder="Cantidad de Medicamento prescrito">
+								</div>
+                            </div>
+
+                            <div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Codigo de la consulta</label>
+								<div class="col-lg-9">
+									<input name="idconsulta" class="form-control" type="text" placeholder="Ingrese codigo de la consulta">
+								</div>
+                            </div>
+
+                            <div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Medico</label>
+								<div class="col-lg-9">
+									<input name="nombdr" class="form-control" type="text" placeholder="nombre del medico que prescribe">
+								</div>
+                            </div>
 
 
 							<div class="form-group row">
@@ -106,6 +140,45 @@
 					</div>
 				</div>
 				<!-- FIN CONTENIDO-->
+                <?php 
+if (isset($_POST["medicamento"]))
+{
+    $medicamento = $_POST["medicamento"];
+    $nombpac = $_POST["nombpac"];
+    $edad = $_POST["edad"];
+    $sexo = $_POST["sexo"];
+    $dosis = $_POST["dosis"];
+    $viadmi = $_POST["viadmi"];
+    $cantpre = $_POST["cantpre"];
+    $idconsulta = $_POST["idconsulta"];
+    $nombdr = $_POST["nombdr"];
+   
+
+     $url = "http://localhost:3000/api/recetas";
+     $data = array(
+        'idpaciente' => $nombre.$telefono,
+        'nombre'=> $nombre,
+        'apellido' => $apellido,
+        'telefono' => $telefono,
+        'edad' => $edad,
+        'direccion' => $direccion,
+        'sexo' => $sexo
+        
+    );
+    $payload = json_encode($data);
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_HEADER, false);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER,
+        array("Content-type: application/json"));
+    curl_setopt($curl, CURLOPT_POST, true); 
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
+    $json_response = curl_exec($curl);
+    $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    curl_close($curl);
+
+}
+?>
 
 </div>
         </div>

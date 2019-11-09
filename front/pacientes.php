@@ -60,7 +60,7 @@
       </button>
     </div-->
 
-    <a href="" class="white-text mx-4">Table name</a>
+    <a href="" class="white-text mx-4">Pacientes</a>
 
     <!-- div>
       <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
@@ -151,6 +151,7 @@
         <!--Table body-->
       </table>
       <!--Table-->
+      
     </div>
 
   </div>

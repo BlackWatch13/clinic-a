@@ -30,7 +30,7 @@
             <ul class="list-unstyled CTAs">
                  <img src="img/logo.png" class="" alt="" style= "padding: 0px 10px 10px 10px; width: 125px; margin-left: 20% " >
                    <li>
-                    <a href="#" class="download">Cerrar Sesion</a>
+                    <a href="../index.php" class="download">Cerrar Sesion</a>
                 </li>
 
             </ul>

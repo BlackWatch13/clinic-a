@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Citas</title>
+    <title>Crear Usuario</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -41,7 +41,7 @@
 
                 </div>
                 <div class="container-fluid col-7">
-                   <h2 class="tituloHeader"> Citas Proximas </h2>
+                   <h2 class="tituloHeader"> Crear Usuario </h2>
                 </div>
             </nav>
 <div class="container-fluid" style="margin-top:60px">
@@ -51,7 +51,7 @@
 
 	 <div class="fondoForm  light-blue accent-1">
 					<div class="card-header">
-						<h4>Informacion del Paciente </h4>
+						<h4>Informacion del Usuario </h4>
 					</div>
 					<div class="card-body">
 						<form class="form" role="form" autocomplete="off" method="post">
@@ -77,6 +77,13 @@
 								<label class="col-lg-3 col-form-label form-control-label">Especialidad</label>
 								<div class="col-lg-9">
 									<input name="especialidad" class="form-control" type="text" placeholder="Unicamente para doctores">
+								</div>
+
+                            </div>
+                            <div class="form-group row">
+								<label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
+								<div class="col-lg-9">
+									<input name="pass" class="form-control" type="password" placeholder="">
 								</div>
 
                             </div>
@@ -108,22 +115,22 @@
                 <?php
 if (isset($_POST["nombre"]))
 {
+    $username = $_POST["username"];
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
-    $telefono = $_POST["telefono"];
-    $edad = $_POST["edad"];
-    $direccion = $_POST["direccion"];
-    $sexo = $_POST["sexo"];
+    $estado = $_POST["estado"];
+    $especialidad = $_POST["especialidad"];
+    $pass = $_POST["pass"];
 
      $url = "http://localhost:3000/api/user";
      $data = array(
-        'idpaciente' => $nombre.$telefono,
+        'iduser' => $username,
         'nombre'=> $nombre,
         'apellido' => $apellido,
-        'telefono' => $telefono,
-        'edad' => $edad,
-        'direccion' => $direccion,
-        'sexo' => $sexo
+        'estado' => $estado,
+        'especialidad' => $especialidad,
+        'pass' => $pass
+        
 
     );
     $payload = json_encode($data);
