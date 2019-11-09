@@ -234,7 +234,7 @@
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-default">Guardar</button>
+        <button class="btn btn-default" id="modificar">Guardar</button>
       </div>
      </div>
      </div>
