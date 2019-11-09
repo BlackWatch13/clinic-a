@@ -149,7 +149,7 @@
           }
 
           echo '<td>
-          <button type="button" class="btn  btn-sm px-2">
+          <button type="button" class="btn  btn-sm px-2" id="editar">
             <i class="far fa-edit mt-0"></i>
           </button>
           <button type="button" class="btn btn-sm px-2" id="borrar">
@@ -177,7 +177,68 @@
 <!-- Table with panel -->
 
      <!-- INSERTAR CONTENIDOS -->
+     <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+     <div class="modal-dialog" role="document">
+     <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Editar Usuario</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="far fa-calendar-alt prefix grey-text"></i>
+          <input name="username" type="text" id="editformusername" class="form-control validate">
+        </div>
 
+        <div class="md-form mb-5">
+          <i class="far fa-clock prefix grey-text"></i>
+          <input name="nombre" type="text" id="editformname" class="form-control validate">
+
+        </div>
+
+        <div class="md-form mb-5">
+          <i class="fas fa-user-injured prefix grey-text"></i>
+          <input name="apellido" type="text" id="editformsurname" class="form-control validate">
+
+        </div>
+
+
+        <div class="md-form mb-5">
+
+          <select name="estado" id="editformstate" class="browser-default custom-select" >
+          <option selected>Elegir tipo de usuario</option>
+          <option value="1">Administrador</option>
+          <option value="2">Recepcionista</option>
+          <option value="3">Doctor</option>
+          </select>
+        </div>
+
+
+
+        <div class="md-form mb-5">
+          <i class="fas fa-certificate prefix grey-text"></i>
+          <input name="especialidad" type="text" id="editformesp" class="form-control validate" >
+
+        </div>
+
+
+
+        <div class="md-form mb-5">
+          <i class="fas fa-certificate prefix grey-text"></i>
+          <input name="contraseña" type="password" id="editformpass" class="form-control validate" placeholder="Especialidad">
+
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default">Guardar</button>
+      </div>
+     </div>
+     </div>
+     </div>
 
 
 </div>
@@ -211,7 +272,27 @@
             });
 
 
+            $('#editar').click(function(){
+              var $row = $(this).closest("tr");
+              var $text = $row.find(".4").text();
+              if($text=="admin")
+              {
+                $("#editformstate").val('1');
+              }
+              else if ($text=="recepcionista") {
+                $("#editformstate").val('2');
+              }
+              else if ($text=="doctor") {
+                $("#editformstate").val('3');
+              }
+              document.getElementById("editformusername").value = $row.find(".1").text();
+              document.getElementById("editformname").value = $row.find(".2").text();
+              document.getElementById("editformsurname").value = $row.find(".3").text();
+              document.getElementById("editformesp").value = $row.find(".5").text();
+              document.getElementById("editformpass").value = $row.find(".6").text();
 
+              $('#modalLoginForm').modal('show');
+             });
 
 
             $('#borrar').click(function(){
