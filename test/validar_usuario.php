@@ -23,7 +23,8 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
  $usuario = strtolower(htmlentities($_POST["usuario"], ENT_QUOTES));
  $password = $_POST["password"];
  $result = pg_query('SELECT iduser,pass, estado FROM public.user where iduser = \''.$usuario.'\'');
- if($row = pg_fetch_array($result)){
+$row = pg_fetch_array($result);
+ if($row){
   if($row["pass"] == $password){
    $_SESSION["k_username"] = $row['iduser'];
    if($row["estado"]== 1){
@@ -41,22 +42,31 @@ if(trim($_POST["usuario"]) != "" && trim($_POST["password"]) != "")
             $_SESSION['log_in'] = true;
             $_SESSION["rol"] = "recepcionista";
 
-    }
+
   }else if($row["estado"]== 3){
     //mandalo a las pantallas de usuario
         header('location:../front/index.php');
 
         $_SESSION['log_in'] = true;
         $_SESSION["rol"] = "doctor";
-  }
+
  }else{
   echo '<script>alert("usuario o contraseña invalidos");</script>';
-    header('location:./index.php');
+    header('location:../index.php');
 
  }
  pg_free_result($result);
 }else{
  echo 'Debe especificar un usuario y password';
+} }
+else{
+
+header('location:../index.php');
+}
+}
+else{
+
+header('location:../index.php');
 }
 pg_close();
 ?>

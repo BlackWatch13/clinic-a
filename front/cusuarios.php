@@ -119,7 +119,7 @@
         <!--Table head-->
             <tbody id="myTable">
         <?php
-        $i = 1;
+
         $url = "http://localhost:3000/api/user";
         $json = file_get_contents($url);
         $datos = json_decode($json, true);
@@ -131,7 +131,7 @@
 
           foreach($datos as $info)
           {
-            echo '<td class="'.$i.'">';
+            echo '<td>';
             if($info=='1'){
               echo("admin");
             }
@@ -145,7 +145,7 @@
                   echo($info);
                 }
             echo("</td>");
-            $i++;
+
           }
 
           echo '<td>
@@ -176,7 +176,7 @@
 </div>
 <!-- Table with panel -->
 
-     <!-- INSERTAR CONTENIDOS -->
+     <!-- INSERTAR Modal -->
      <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
      <div class="modal-dialog" role="document">
