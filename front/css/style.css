@@ -27,6 +27,7 @@ a:focus {
     border-radius: 0;
     margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+   
 }
 
 .navbar-btn {
@@ -53,14 +54,15 @@ a:focus {
 
 #sidebar {
     width: 250px;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
-  /*  height: 100vh;*/
+ height: 115%;
     z-index: 999;
     background: azure;
     color: #000;
     transition: all 0.3s;
+    overflow: scroll;
 
 }
 
@@ -71,6 +73,7 @@ a:focus {
 #sidebar .sidebar-header {
     padding: 20px;
     background: #6d7fcc;
+   
 }
 
 #sidebar ul.components {
@@ -177,12 +180,15 @@ a.article:hover {
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
+    
     }
     #sidebar.active {
         margin-left: 0;
+    
     }
     #content {
         width: 100%;
+       
     }
     #content.active {
         width: calc(100% - 250px);
