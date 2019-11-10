@@ -115,8 +115,8 @@ alert($text);
 
 jQuery('.crear').on('click', function() {
      var $row = jQuery(this).closest('tr');
-     var $tds = $row.find("td:nth-child(1)").innerHTML;
-  alert($tds);
+     var $tds = $row.find("td:nth-child(1)");
+
      $columns.addClass('row-highlight');
      var values = "";
 
