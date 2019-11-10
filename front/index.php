@@ -54,61 +54,36 @@
 <div class="d-flex p-3 col-example" style="width:80%; float:left;">
                 <div class="card" style="width:325px;   ">
                 <div class="card-header">Añadir nueva cita </div>
-                <div class="card-body text-center"> <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm"><i class="fas fa-plus fa-6x"></i></a></div>
+                <div class="card-body text-center"> <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#basicExampleModal"><i class="fas fa-plus fa-6x"></i></a></div>
                 <div class="card-footer"></div>
 </div>
 
      <!-- INSERTAR CONTENIDOS -->
-     <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     
+
+<!--ASDASDASDASDASDASDASD -->
+
+<!-- Modal -->
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Nueva Cita</h4>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear nueva cita</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <i class="far fa-calendar-alt prefix grey-text"></i>
-          <input name="fecha" type="date" id="defaultForm-email" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-email"></label>
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="far fa-clock prefix grey-text"></i>
-          <input name="hora" type="time" id="defaultForm-email" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-email"></label>
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="fas fa-user-injured prefix grey-text"></i>
-          <input name="idpaciente" type="email" id="defaultForm-email" class="form-control validate" placeholder="paciente">
-          <label data-error="wrong" data-success="right" for="defaultForm-email"></label>
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="fas fa-user-md prefix grey-text"></i>
-          <input name="doctor" type="email" id="defaultForm-email" class="form-control validate" placeholder="doctor">
-          <label data-error="wrong" data-success="right" for="defaultForm-email"></label>
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="fas fa-certificate prefix grey-text"></i>
-          <input name="especialidad" type="email" id="defaultForm-email" class="form-control validate" placeholder="Especialidad">
-          <label data-error="wrong" data-success="right" for="defaultForm-email"></label>
-        </div>
-
+      <div class="modal-body">
+        Para crear una nueva cita, seleccione un usuario desde la pantalla de usuarios
       </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-default">Guardar</button>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='pacientes.php'">Continuar</button>
       </div>
     </div>
   </div>
 </div>
-
-
 
 </div>
         </div>

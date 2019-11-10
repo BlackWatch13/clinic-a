@@ -112,3 +112,56 @@ var $text = $row.find(".nr").text(); // Find the text
 // Let's test it out
 alert($text);
 });*/
+
+jQuery('.crear').on('click', function() {
+     var $row = jQuery(this).closest('tr');
+     var $tds = $row.find("td:nth-child(1)").innerHTML;
+  alert($tds);
+     $columns.addClass('row-highlight');
+     var values = "";
+
+     jQuery.each($columns, function(i, item) {
+       switch(i+1) {
+              case 1:
+              document.getElementById("editform1").value = item.innerHTML;
+                // code block
+                break;
+                case 2:
+                document.getElementById("editform2").value = item.innerHTML;
+                  break;
+                  case 3:
+                  document.getElementById("editform3").value = item.innerHTML;
+                    break;
+                    case 4:
+                    document.getElementById("editform4").value = item.innerHTML;
+
+                      break;
+                      case 5:
+                      document.getElementById("editform5").value = item.innerHTML;
+                        break;
+                        case 6:
+                        document.getElementById("editform6").value = item.innerHTML;
+                          break;
+                          case 7:
+                          var $text = item.innerHTML;
+
+
+                          if($text=="Hombre" | $text=="Masculino")
+                          {
+                            $("#editform7").val('Hombre');
+                          }
+                          else if ($text=="Mujer" | $text=="Femenino") {
+                            $("#editform7").val('Mujer');
+                          }
+                          else {
+                            alert($text);
+                          }
+                            break;
+              default:
+                // code block
+              }
+
+     });
+
+     $('#modalLoginForm').modal('show');
+ });

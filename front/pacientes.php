@@ -69,7 +69,7 @@
   </div>
   <!--/Card image-->
 
-  <div class="px-4">
+  <div class="px-0">
 
     <div class="table-wrapper">
       <!--Table-->
@@ -118,6 +118,10 @@
               Editar/Eliminar
 
             </th>
+            <th class="th-lg">
+              Nueva cita
+
+            </th>
           </tr>
         </thead>
         <!--Table head-->
@@ -132,7 +136,7 @@
 
           foreach($data as $datos)
           {
-            echo "<tr>";
+            echo '<tr onclick=nuevacita()>';
 
             foreach($datos as $info)
             {
@@ -146,6 +150,11 @@
             </button>
             <button type="button" class="btn btn-sm px-2 borrar">
               <i class="fas fa-times mt-0"></i>
+            </button>
+            </td>
+            <td>
+            <button type="button" class="btn btn-sm px-2 crear">
+              <i class="fas fa-plus mt-0"></i>
             </button>
             </td>
             </tr>';
@@ -224,6 +233,55 @@
      </div>
 
 
+<!--MODAL CITA -->
+<div class="modal fade" id="modalcita" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+ <div class="modal-header text-center">
+   <h4 class="modal-title w-100 font-weight-bold">Nueva Cita</h4>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+ <div class="modal-body mx-3">
+   <div class="md-form mb-5">
+     <i class="far fa-calendar-alt prefix grey-text"></i>
+     <input name="fecha" type="date" id="citafecha" class="form-control validate">
+
+   </div>
+
+   <div class="md-form mb-5">
+     <i class="far fa-clock prefix grey-text"></i>
+     <input name="hora" type="time" id="citahora" class="form-control validate">
+
+   </div>
+
+   <div class="md-form mb-5">
+     <i class="fas fa-user-injured prefix grey-text"></i>
+     <input name="idpaciente" type="email" id="citapaciente" class="form-control validate" placeholder="paciente">
+
+   </div>
+
+   <div class="md-form mb-5">
+     <i class="fas fa-user-md prefix grey-text"></i>
+     <input name="doctor" type="email" id="citadoc" class="form-control validate" placeholder="doctor">
+
+   </div>
+
+   <div class="md-form mb-5">
+     <i class="fas fa-certificate prefix grey-text"></i>
+     <input name="especialidad" type="email" id="citaesp" class="form-control validate" placeholder="Especialidad">
+
+   </div>
+
+ </div>
+ <div class="modal-footer d-flex justify-content-center">
+   <button class="btn btn-default">Guardar</button>
+ </div>
+</div>
+</div>
+</div>
 
 </div>
         </div>
