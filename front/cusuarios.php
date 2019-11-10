@@ -64,7 +64,7 @@
 
 
     <div>
-      <input id="myInput" type="text" placeholder="Buscar..">
+      <input id="myInput" onkeyup="myFunction()" type="text" placeholder="Buscar..">
     </div>
 
   </div>
@@ -74,7 +74,7 @@
 
     <div class="table-wrapper">
       <!--Table-->
-      <table id="mainTable" class="table table-hover mb-0">
+      <table  class="table table-hover mb-0">
 
         <!--Table head-->
         <thead>
@@ -117,7 +117,7 @@
           </tr>
         </thead>
         <!--Table head-->
-            <tbody id="myTable">
+            <tbody id="mainTable">
         <?php
 
         $url = "http://localhost:3000/api/user";
@@ -262,6 +262,13 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+
+          $("#myInput").on("keyup", function() {
+   var value = $(this).val().toLowerCase();
+   $("#mainTable tr").filter(function() {
+     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+   });
+ });
             $("#sidebar").mCustomScrollbar({
                 theme: "minimal"
             });
@@ -272,6 +279,7 @@
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
         });
+
 
     </script>
 </body>

@@ -62,17 +62,9 @@
 
     <a href="" class="white-text mx-4">Pacientes</a>
 
-    <!-- div>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="fas fa-pencil-alt mt-0"></i>
-      </button>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="far fa-trash-alt mt-0"></i>
-      </button>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="fas fa-info-circle mt-0"></i>
-      </button>
-    </div-->
+    <<div>
+      <input id="myInput" type="text" placeholder="Buscar..">
+    </div>
 
   </div>
   <!--/Card image-->
@@ -253,6 +245,15 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+
+          $("#myInput").on("keyup", function() {
+   var value = $(this).val().toLowerCase();
+   $("#mainTable tr").filter(function() {
+     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+   });
+ });
+
+
             $("#sidebar").mCustomScrollbar({
                 theme: "minimal"
             });
@@ -263,6 +264,7 @@
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
         });
+
 
 
 
