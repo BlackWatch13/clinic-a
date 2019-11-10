@@ -58,12 +58,13 @@ jQuery('.editar').on('click', function() {
           $borrar = $(this).text();         // Prints out the text within the <td>
        });
 
-       $.post("../test/pruebaenvio.php",
+       $.post("../test/eliminarUsuario.php",
       {
         username: $borrar
       },
       function(data, status){
         alert("Data: " + data + "\nStatus: " + status);
+        window.location="../front/cusuarios.php";
         });
 
 
@@ -84,17 +85,18 @@ jQuery('.editar').on('click', function() {
     //variables correspondientes
 
     //Cambiar la ruta del post a archivo necesario
-        $.post("../test/pruebaenvio.php",
+        $.post("../test/updateUser.php",
        {
          username: $edit1,
          nombre: $edit2,
          apellido: $edit3,
          estado: $edit4,
          especialidad: $edit5,
-         password: $edit6
+         pass: $edit6
        },
        function(data, status){
          alert("Data: " + data + "\nStatus: " + status);
+         window.location="../front/cusuarios.php";
          });
 
 
