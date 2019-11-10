@@ -14,9 +14,6 @@
                     <a href="registrop.php" ><i class="fas fa-address-card mr-3"></i>Nuevo paciente</a>
                 </li>
                 <li>
-                    <a href="recetasp.php" ><i class="fas fa-edit mr-3"></i>Recetas</a>
-                </li>
-                <li>
                     <a href="expedientes.php" ><i class="fas fa-archive mr-3 "></i>Expedientes</a>
                 </li>
                 <li>
