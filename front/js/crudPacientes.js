@@ -18,7 +18,22 @@ jQuery('.editar').on('click', function() {
                   document.getElementById("editform3").value = item.innerHTML;
                     break;
                     case 4:
-                    document.getElementById("editform4").value = item.innerHTML;
+                    var $text = item.innerHTML;
+
+
+                    if($text=="admin")
+                    {
+                      $("#editform4").val('1');
+                    }
+                    else if ($text=="recepcionista") {
+                      $("#editform4").val('2');
+                    }
+                    else if ($text=="doctor") {
+                      $("#editform4").val('3');
+                    }
+                    else {
+                      alert($text);
+                    }
                       break;
                       case 5:
                       document.getElementById("editform5").value = item.innerHTML;
@@ -26,21 +41,6 @@ jQuery('.editar').on('click', function() {
                         case 6:
                         document.getElementById("editform6").value = item.innerHTML;
                           break;
-                          case 7:
-                          var $text = item.innerHTML;
-
-
-                          if($text=="Hombre" | $text=="Masculino")
-                          {
-                            $("#editform7").val('Hombre');
-                          }
-                          else if ($text=="Mujer" | $text=="Femenino") {
-                            $("#editform7").val('Mujer');
-                          }
-                          else {
-                            alert($text);
-                          }
-                            break;
               default:
                 // code block
               }
@@ -58,12 +58,13 @@ jQuery('.editar').on('click', function() {
           $borrar = $(this).text();         // Prints out the text within the <td>
        });
 
-       $.post("../test/pruebaenvio.php",
+       $.post("../test/eliminarPac.php",
       {
         username: $borrar
       },
       function(data, status){
-        alert("Data: " + data + "\nStatus: " + status + $borrar);
+        alert("Data: " + data + "\nStatus: " + status);
+        window.location="../front/pacientes.php";
         });
 
 
@@ -73,7 +74,6 @@ jQuery('.editar').on('click', function() {
   jQuery('.modificar').on('click', function() {
     //obtener valores asi como estan en la tabla y el form
     //desde username hasta pass
-
     var $edit1 = document.getElementById("editform1").value;
     var $edit2 = document.getElementById("editform2").value;
     var $edit3 = document.getElementById("editform3").value;
@@ -86,18 +86,19 @@ jQuery('.editar').on('click', function() {
     //variables correspondientes
 
     //Cambiar la ruta del post a archivo necesario
-        $.post("../test/pruebaenvio.php",
+        $.post("../test/updatepacientes.php",
        {
          idpaciente: $edit1,
          nombre: $edit2,
          apellido: $edit3,
          telefono: $edit4,
          edad: $edit5,
-         dirección: $edit6,
+         direccion: $edit6,
          sexo: $edit7
        },
        function(data, status){
          alert("Data: " + data + "\nStatus: " + status);
+         window.location="../front/pacientes.php";
          });
 
 
