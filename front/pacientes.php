@@ -9,7 +9,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
@@ -63,7 +63,7 @@
     <a href="" class="white-text mx-4">Pacientes</a>
 
     <<div>
-      <input id="myInput" type="text" placeholder="Buscar..">
+      <input id="myInput" type="text" placeholder="Buscar.." class="mx-4">
     </div>
 
   </div>
@@ -73,7 +73,7 @@
 
     <div class="table-wrapper">
       <!--Table-->
-      <table id="mainTable" class="table table-hover mb-0">
+      <table id="fullTable"  class="table table-hover mb-0">
 
         <!--Table head-->
         <thead>
@@ -123,7 +123,7 @@
         <!--Table head-->
 
         <!--Table body-->
-        <tbody>
+        <tbody id="mainTable">
           <?php
           $url = "http://localhost:3000/api/pacientes";
           $json = file_get_contents($url);
@@ -245,6 +245,8 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+
+
 
           $("#myInput").on("keyup", function() {
    var value = $(this).val().toLowerCase();

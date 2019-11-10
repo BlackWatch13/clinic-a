@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Usuarios</title>
+    <title>Expedientes</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -41,7 +41,7 @@
 
                 </div>
                 <div class="container-fluid col-7">
-                   <h2 class="tituloHeader"> Pacientes </h2>
+                   <h2 class="tituloHeader"> Expedientes </h2>
                 </div>
             </nav>
 <div class="container-fluid" style="margin-top:80px">
@@ -60,7 +60,7 @@
       </button>
     </div-->
 
-    <a href="" class="white-text mx-4">Usuarios</a>
+    <a href="" class="white-text mx-4">Expedientes</a>
 
     <<div>
       <input id="myInput" type="text" placeholder="Buscar.." class="mx-4">
@@ -80,32 +80,22 @@
           <tr>
 
             <th class="th-lg">
-              <a>Username
+              <a>ID
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
             <th class="th-lg">
-              <a href="">Nombre
+              <a href="">Paciente
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
             <th class="th-lg">
-              <a href="">Apellido
+              <a href="">Alergias
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
             <th class="th-lg">
-              <a href="">Estado
-                <i class="fas fa-sort ml-1"></i>
-              </a>
-            </th>
-            <th class="th-lg">
-              <a href="">Especialidad
-                <i class="fas fa-sort ml-1"></i>
-              </a>
-            </th>
-            <th class="th-lg">
-              <a href="">Contraseña
+              <a href="">Enfermedades/padecimientos
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
@@ -116,58 +106,41 @@
           </tr>
         </thead>
         <!--Table head-->
-            <tbody id="mainTable">
-        <?php
 
-        $url = "http://localhost:3000/api/user";
-        $json = file_get_contents($url);
-        $datos = json_decode($json, true);
-        $data = $datos["data"];
-
-        foreach($data as $datos)
-        {
-          echo "<tr>";
-
-          foreach($datos as $info)
-          {
-            echo '<td>';
-            if($info=='1'){
-              echo("admin");
-            }
-              else if($info=='2'){
-                echo("recepcionista");
-              }
-                else if($info=='3'){
-                  echo("doctor");
-                }
-                else{
-                  echo($info);
-                }
-            echo("</td>");
-
-          }
-
-          echo '<td>
-          <button type="button" class="btn  btn-sm px-2 editar">
-            <i class="far fa-edit mt-0"></i>
-          </button>
-          <button type="button" class="btn btn-sm px-2 borrar">
-            <i class="fas fa-times mt-0"></i>
-          </button>
-          </td>
-          </tr>';
-        }
-        ?>
         <!--Table body-->
+        <tbody id="mainTable">
+          <?php
+          $url = "http://localhost:3000/api/expe";
+          $json = file_get_contents($url);
+          $datos = json_decode($json, true);
+          $data = $datos["data"];
 
+          foreach($data as $datos)
+          {
+            echo "<tr>";
 
-
-
-
+            foreach($datos as $info)
+            {
+              echo "<td>";
+              echo($info);
+              echo("</td>");
+            }
+            echo '<td>
+            <button type="button" class="btn  btn-sm px-2 editar">
+              <i class="far fa-edit mt-0"></i>
+            </button>
+            <button type="button" class="btn btn-sm px-2 borrar">
+              <i class="fas fa-times mt-0"></i>
+            </button>
+            </td>
+            </tr>';
+          }
+          ?>
         </tbody>
         <!--Table body-->
       </table>
       <!--Table-->
+
     </div>
 
   </div>
@@ -175,61 +148,38 @@
 </div>
 <!-- Table with panel -->
 
-     <!-- INSERTAR Modal -->
+     <!-- INSERTAR MODAL -->
      <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
      <div class="modal-dialog" role="document">
      <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Editar Usuario</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Editar Expediente</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body mx-3">
+        <input type=hidden id="editform1" value="">
         <div class="md-form mb-5">
-          <i class="far fa-calendar-alt prefix grey-text"></i>
-          <input name="username" type="text" id="editform1" class="form-control validate">
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="far fa-clock prefix grey-text"></i>
-          <input name="nombre" type="text" id="editform2" class="form-control validate">
+          <i class="far fa-address-book prefix grey-text"></i>
+          <input name="nombre" type="text" id="editform2" class="form-control validate" readonly>
 
         </div>
 
         <div class="md-form mb-5">
-          <i class="fas fa-user-injured prefix grey-text"></i>
-          <input name="apellido" type="text" id="editform3" class="form-control validate">
+          <i class="far fa-address-book prefix grey-text"></i>
+          <input name="alergias" type="text" id="editform3" class="form-control validate">
 
         </div>
-
 
         <div class="md-form mb-5">
-
-          <select name="estado" id="editform4" class="browser-default custom-select" >
-          <option selected>Elegir tipo de usuario</option>
-          <option value="1">Administrador</option>
-          <option value="2">Recepcionista</option>
-          <option value="3">Doctor</option>
-          </select>
-        </div>
-
-
-
-        <div class="md-form mb-5">
-          <i class="fas fa-certificate prefix grey-text"></i>
-          <input name="especialidad" type="text" id="editform5" class="form-control validate" >
+          <i class="fas fa-phone prefix grey-text"></i>
+          <input name="enferpade" type="text" id="editform4" class="form-control validate" >
 
         </div>
 
 
-
-        <div class="md-form mb-5">
-          <i class="fas fa-certificate prefix grey-text"></i>
-          <input name="contraseña" type="password" id="editform6" class="form-control validate" placeholder="Especialidad">
-
-        </div>
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
@@ -240,6 +190,7 @@
      </div>
 
 
+
 </div>
         </div>
     </div>
@@ -247,7 +198,7 @@
     <?php
     include 'footer.php';
     ?>
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
@@ -256,13 +207,12 @@
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="./js/mindmup-editabletable.js"></script>
-    <script src="./js/crudUsuarios.js"></script>
-
+    <script src="./js/crudExpedientes.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
 
-        
+
 
           $("#myInput").on("keyup", function() {
    var value = $(this).val().toLowerCase();
@@ -270,6 +220,8 @@
      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
    });
  });
+
+
             $("#sidebar").mCustomScrollbar({
                 theme: "minimal"
             });
@@ -280,6 +232,10 @@
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
         });
+
+
+
+
 
 
     </script>
