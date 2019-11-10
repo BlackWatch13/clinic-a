@@ -29,7 +29,7 @@ $row = pg_fetch_array($result);
    $_SESSION["k_username"] = $row['iduser'];
    if($row["estado"]== 1){
        //mandalo a la pantallas de admon
-            header('location:../front/index.php');
+            header('location:../front/cusuarios.php');
 
             $_SESSION['log_in'] = true;
             $_SESSION["rol"] = "admin";

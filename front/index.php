@@ -1,9 +1,7 @@
 <?php
     session_start();
     //$_SESSION = array();
-    if ($_SESSION["rol"]=="admin") {
-      header('location:../front/cusuarios.php');
-    }
+  
     ?>
 <!DOCTYPE html>
 <html>
