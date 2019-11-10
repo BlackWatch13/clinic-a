@@ -122,6 +122,10 @@
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
+            <th class="th-lg">
+              Editar/Eliminar
+
+            </th>
           </tr>
         </thead>
         <!--Table head-->
@@ -173,55 +177,51 @@
      <div class="modal-dialog" role="document">
      <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Editar Usuario</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Editar Paciente</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body mx-3">
+        <input type=hidden id="editform1" value="">
         <div class="md-form mb-5">
-          <i class="far fa-calendar-alt prefix grey-text"></i>
-          <input name="username" type="text" id="editform1" class="form-control validate">
-        </div>
-
-        <div class="md-form mb-5">
-          <i class="far fa-clock prefix grey-text"></i>
+          <i class="far fa-address-book prefix grey-text"></i>
           <input name="nombre" type="text" id="editform2" class="form-control validate">
 
         </div>
 
         <div class="md-form mb-5">
-          <i class="fas fa-user-injured prefix grey-text"></i>
+          <i class="far fa-address-book prefix grey-text"></i>
           <input name="apellido" type="text" id="editform3" class="form-control validate">
 
         </div>
 
+        <div class="md-form mb-5">
+          <i class="fas fa-phone prefix grey-text"></i>
+          <input name="telefono" type="text" id="editform4" class="form-control validate" >
+
+        </div>
 
         <div class="md-form mb-5">
+          <i class="fas fa-baby-carriage prefix grey-text"></i>
+          <input name="edad" type="text" id="editform5" class="form-control validate" >
 
-          <select name="estado" id="editform4" class="browser-default custom-select" >
-          <option selected>Elegir tipo de usuario</option>
-          <option value="1">Administrador</option>
-          <option value="2">Recepcionista</option>
-          <option value="3">Doctor</option>
+        </div>
+
+        <div class="md-form mb-5">
+          <i class="fas fa-home prefix grey-text"></i>
+          <input name="direccion" type="text" id="editform6" class="form-control validate" >
+
+        </div>
+
+        <div class="md-form mb-5">
+          <select name="sexo" id="editform7" class="browser-default custom-select" >
+          <option selected>Elegir Sexo</option>
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>
           </select>
         </div>
 
-
-
-        <div class="md-form mb-5">
-          <i class="fas fa-certificate prefix grey-text"></i>
-          <input name="especialidad" type="text" id="editform5" class="form-control validate" >
-
-        </div>
-
-
-
-        <div class="md-form mb-5">
-          <i class="fas fa-certificate prefix grey-text"></i>
-          <input name="contraseña" type="password" id="editform6" class="form-control validate" placeholder="Especialidad">
-
-        </div>
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
