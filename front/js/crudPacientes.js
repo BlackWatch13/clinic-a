@@ -18,22 +18,8 @@ jQuery('.editar').on('click', function() {
                   document.getElementById("editform3").value = item.innerHTML;
                     break;
                     case 4:
-                    var $text = item.innerHTML;
+                    document.getElementById("editform4").value = item.innerHTML;
 
-
-                    if($text=="admin")
-                    {
-                      $("#editform4").val('1');
-                    }
-                    else if ($text=="recepcionista") {
-                      $("#editform4").val('2');
-                    }
-                    else if ($text=="doctor") {
-                      $("#editform4").val('3');
-                    }
-                    else {
-                      alert($text);
-                    }
                       break;
                       case 5:
                       document.getElementById("editform5").value = item.innerHTML;
@@ -41,6 +27,21 @@ jQuery('.editar').on('click', function() {
                         case 6:
                         document.getElementById("editform6").value = item.innerHTML;
                           break;
+                          case 7:
+                          var $text = item.innerHTML;
+
+
+                          if($text=="Hombre" | $text=="Masculino")
+                          {
+                            $("#editform7").val('Hombre');
+                          }
+                          else if ($text=="Mujer" | $text=="Femenino") {
+                            $("#editform7").val('Mujer');
+                          }
+                          else {
+                            alert($text);
+                          }
+                            break;
               default:
                 // code block
               }
