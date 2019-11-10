@@ -37,7 +37,7 @@
                             <label for="check"><span class="icon"></span> Mantener Sesion abierta</label>
                         </div>
                         <div class="group">
-                            <input type="submit" class="button" value="Entrar">
+                            <input type="submit" class="button" value="Entraar">
                         </div>
 
                     </div>
