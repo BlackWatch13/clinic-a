@@ -54,7 +54,7 @@
 						<h4>Informacion</h4>
 					</div>
 					<div class="card-body">
-						<form class="form" role="form" autocomplete="off">
+						<form class="form" role="form" autocomplete="off" method="POST">
 							<div class="form-group row">
 								<label class="col-lg-3 col-form-label form-control-label">Medicamento</label>
 								<div class="col-lg-9">
@@ -132,8 +132,7 @@
 							<div class="form-group row">
 								<div class="col-lg-12 text-center">
 									<input type="reset" class="btn btn-secondary" value="Cancelar">
-									<input type="button" class="btn btn-primary"
-										value="Guardar">
+									<input type="submit" class="btn btn-primary" value="Guardar">
 								</div>
 							</div>
 						</form>
@@ -143,11 +142,15 @@
                 <?php 
 if (isset($_POST["medicamento"]))
 {
+
+    $id= getdate();
+
     $medicamento = $_POST["medicamento"];
-    $nombpac = $_POST["nombpac"];
+    $nombpac = $_POST["paciente"];
     $edad = $_POST["edad"];
     $sexo = $_POST["sexo"];
     $dosis = $_POST["dosis"];
+    $formed = $_POST["formed"];
     $viadmi = $_POST["viadmi"];
     $cantpre = $_POST["cantpre"];
     $idconsulta = $_POST["idconsulta"];
@@ -156,13 +159,17 @@ if (isset($_POST["medicamento"]))
 
      $url = "http://localhost:3000/api/recetas";
      $data = array(
-        'idpaciente' => $nombre.$telefono,
-        'nombre'=> $nombre,
-        'apellido' => $apellido,
-        'telefono' => $telefono,
+        'idrec' => $id['mday'].$id['mon'].$id['year'].$id['hours'].$id['minutes'].$id['seconds'],
+        'medicamento' => $medicamento,
+        'nombpac'=> $nombpac,
         'edad' => $edad,
-        'direccion' => $direccion,
-        'sexo' => $sexo
+        'sexo' => $sexo,
+        'dosis' => $dosis,
+        'formed' => $formed,
+        'viadmi' => $viadmi,
+        'cantpre' => $cantpre,
+        'idconsulta' => $idconsulta,
+        'nombdr' => $nombdr
         
     );
     $payload = json_encode($data);

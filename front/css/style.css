@@ -54,7 +54,7 @@ a:focus {
 
 #sidebar {
     width: 250px;
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
  height: 115%;
@@ -62,7 +62,6 @@ a:focus {
     background: azure;
     color: #000;
     transition: all 0.3s;
-    overflow: scroll;
 
 }
 
